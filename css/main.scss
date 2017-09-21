@@ -1,0 +1,91 @@
+@import "nav";
+
+
+body, html {
+    max-width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #e7e7e2;
+    font-family: 'Lato';
+    font-size: 1em;
+    position: relative;
+    padding-bottom: 48px;
+    padding-top: 80px;
+    min-height: 100%;
+}
+.container {
+    line-height: 140%;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin: 0 20%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 25px;
+    padding-bottom: 75px;
+    background-color: #ffffff;
+    min-height: 100%;
+    height: auto;
+    @media screen and (max-width: 700px) {
+        margin: 0 0 !important;
+        padding: 10px 5px 75px 5px !important;
+        width: auto;
+        height: auto;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    font-family: "Lato";
+    text-transform: uppercase;
+    background-color: $navbg;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @media screen and (max-width: 700px) {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-link {
+        @media screen and (max-width: 700px) {
+            display: inline-block;
+            width: 45%;
+        }
+        display: inline-block;
+    }
+    a {
+        color: $option;
+        cursor: pointer;
+        padding: 0 1em;
+        text-decoration: none;
+        &:hover {
+            color: lighten($option, 50%);
+            cursor: pointer;
+            transition: all .25s;
+        }
+        @media screen and (max-width: 700px) {
+            width: 100%;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            flex: 1
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.site-table {
+    td {
+        padding: 0 15px;
+    }
+}

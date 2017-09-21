@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <!-- Custom CSS-->
-        <link rel="stylesheet" href="/css/main.min.css">
+        <link rel="stylesheet" href="css/main.min.css">
         <title>Title</title>
     </head>
     <body>
@@ -43,6 +43,6 @@
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
-        <script src="/js/main.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

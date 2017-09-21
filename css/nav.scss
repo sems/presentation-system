@@ -1,0 +1,96 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+
+$navbg: #2c3840;
+$option: #b2bbbd;
+$brand: #b2bbbd;
+
+nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    font-family: "Lato";
+    text-transform: uppercase;
+    background-color: $navbg;
+    z-index: 10;
+    top: 0;
+    ul {
+        max-width: 62.5em;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        li {
+            padding: 0.75em;
+            a {
+                text-decoration: none;
+                color: $brand;
+                transition: all .25s;
+                &:hover {
+                    color: lighten($option, 50%);
+                }
+            }
+            &.brand {
+                font-size: 2em;
+                color: $brand;
+                flex: 4;
+                text-align: left;
+
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            &.nav-items {
+                font-size: 1.25em;
+                color: $option;
+                text-align: right;
+                border-bottom: 3px solid transparent;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            &.active {
+                border-bottom: 3px solid #CDDC39;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        transition: all .25s ease;
+        top: 0px;
+        &.open {
+            transform: translateY(0);
+        }
+        &.closed {
+            transform: translateY(calc(-100% + 81px));
+        }
+        ul {
+        flex-direction: column;
+            li {
+                width: 100%;
+                padding: .75em;
+                border-bottom: 1px $brand solid;
+                &.brand {
+                    flex: 1;
+                    text-align: center;
+                    transition: all .25s;
+                    order: 5;
+                    border-top: 1px solid darken($brand, 25%);
+                    &:hover {
+                        color: $option;
+                        cursor: pointer;
+                    }
+                }
+                &.nav-items {
+                    text-align: left;
+                    padding-left: 2em;
+                }
+            }
+        }
+    }
+}
