@@ -1,7 +1,7 @@
 // Importing the other stylesheets
 @import "mixins";
 @import "nav";
-
+@import "reset";
 
 body, html {
     @include marpad;
