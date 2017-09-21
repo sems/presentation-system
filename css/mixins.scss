@@ -1,0 +1,22 @@
+@mixin marpad($margin: 0px, $padding: 0px) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin transform_scale($speed)  {
+    -webkit-transform:scale($speed);
+    -moz-transform:scale($speed);
+    -ms-transform:scale($speed);
+    -o-transform:scale($speed);
+    transform:scale($speed);
+}
+
+// Default build of a transition
+// transition: all (1s) ease (1s);
+@mixin transition($direction: all, $duration: "", $usage: ease, $delay:"") {
+    -webkit-transition: $direction unquote($duration) $usage unquote($delay);
+    -moz-transition: $direction unquote($duration) $usage unquote($delay);
+    -o-transition: $direction unquote($duration) $usage unquote($delay);
+    -ms-transition: $direction unquote($duration) $usage unquote($delay);
+    transition: $direction unquote($duration) $usage unquote($delay);
+}

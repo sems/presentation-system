@@ -1,7 +1,10 @@
+// Importing the other stylesheets
+@import "mixins";
 @import "nav";
 
 
 body, html {
+    @include marpad;
     max-width: 100%;
 }
 
