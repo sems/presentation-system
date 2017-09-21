@@ -10,6 +10,31 @@
         <title>Title</title>
     </head>
     <body>
+        <nav>
+            <ul>
+                <li class="brand brand-Desktop"><h1>Knoop Management</h1></li>
+                <li class="nav-items <?php if($sectionActive == "home") { echo "active";} ?> "><a href="/">Home</a></li>
+                <li class="nav-items <?php if($sectionActive == "about") { echo "active";} ?> "><a href="/about">About</a></li>
+                <li class="nav-items <?php if($sectionActive == "portfolio") { echo "active";} ?> "><a href="/portfolio">Blog</a></li>
+                <li class="nav-items <?php if($sectionActive == "contact") { echo "active";}?> "><a href="/contact">Contact</a></li>
+                <?php
+                    if(!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] == false)) {
+
+                    } else {
+
+                        echo "<li class='nav-items";
+                        if($sectionActive == 'controlpanel') {
+                            echo ' active';
+                        }
+                        echo "'><a href='/controlpanel'>CP</a></li>";
+
+                        echo "<li class='nav-items'><a href='/logout'>Logout</a></li>";
+                    };
+
+                ?>
+            </ul>
+        </nav>
+
         <?php
         include $view;
         include ("inc/footer.php");
