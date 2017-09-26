@@ -1,3 +1,3 @@
 <div class="container">
-    <h1>Thanks for visiting</h1>
+    <h1>Welkom bij Knoop!</h1>
 </div>

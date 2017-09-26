@@ -13,6 +13,4 @@
 	<p>Telefoon: 0272-426236</p>
 	<p>Fax: 0272-426236</p>
 	<p>verder kunt u een vraag stellen in de live chat!</p>
-
-
 </div>
