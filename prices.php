@@ -2,8 +2,8 @@
     require_once "inc/package.inc.php";
     require('inc/config.php');
 
-    $view = "views/index.php";
-    $sectionActive = "Home";
+    $view = "views/prices.php";
+    $sectionActive = "Prices";
 
     include_once $template;
 ?>
