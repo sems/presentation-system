@@ -80,13 +80,13 @@
 </section>
 
 <div class='modal'>
-<header>Sign Up</header>
+<header>Aanvragen</header>
 	<div class='content'>
-		<a href="#" class='facebook-btn'>Sign up with facebook <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+		<a href="#" class='facebook-btn'>Login met Facebook <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		<form>
-			<p>Or Create an Account:</p>
+			<p>Of registreer:</p>
 			<div class='field'>
-				<label for="username">Username</label>
+				<label for="username">Gebruikers naam</label>
 				<input type='text' id="username" />
 			</div>
 			<div class='field'>
@@ -94,12 +94,13 @@
 				<input type='email' id="email" />
 			</div>
 			<div class='field'>
-				<label for="planselect">Choose a Plan</label>
+				<label for="planselect">Kies een pakket</label>
 				<select id="planselect">
 					<option val="" disabled>Choose a plan</option>
-					<option val="free">Free</option>
-					<option val="premium">Premium</option>
-					<option val="family">Family</option>
+					<option val="chs_1">Pakket 1</option>
+					<option val="chs_2">Pakket 2</option>
+					<option val="chs_3">Pakket 3</option>
+					<option val="chs_4">Pakket 4</option>
 				</select>
 			</div>
 			<div class='field'>

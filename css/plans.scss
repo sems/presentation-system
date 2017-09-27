@@ -140,6 +140,9 @@ body {
         }
     }
 }
+
+// NOTE:
+// Clicked funcion
 .overlay {
     position: fixed;
 	top: 0;
@@ -167,6 +170,16 @@ $darkGold: #E6D345;
 	opacity: 0;
 	pointer-events: none;
 	transition: 0.15s ease-in-out;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    border-width: 2px;
+    -o-border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
+    border-image: -webkit-linear-gradient(top, #e37a38 0%, #d7485b 100%);
+    border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
+    border-image-slice: 1;
+
+    font-weight: 700;
+    color: #364762;
 	a.facebook-btn {
         padding: 20px 20px;
 		widtH: 100%;
@@ -221,6 +234,8 @@ $darkGold: #E6D345;
         }
     }
 }
+//NOTE
+// End clicked
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
@@ -322,8 +337,8 @@ $darkGold: #E6D345;
                 	    -ms-transform: scale(1.04);
                 	     -o-transform: scale(1.04);
                 	        transform: scale(1.04);
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-                            border-width: 4px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+                    border-width: 2px;
                     -o-border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
                     border-image: -webkit-linear-gradient(top, #e37a38 0%, #d7485b 100%);
                     border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
