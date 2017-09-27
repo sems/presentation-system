@@ -30,9 +30,9 @@ body {
         	float: left;
         	width: 100%;
         	text-align: center;
-        	border-radius: 5px;
+        	border-radius: 2px;
         	margin: 0 0 20px 0;
-
+            border: 2px solid #3e4f6a;
         	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
@@ -169,7 +169,47 @@ body {
     	margin-right: 0;
     }
 
+    #pricePlans {
+        #plans {
+            .plan {
+                .button a {
+                	-webkit-transition: all .25s;
+                	   -moz-transition: all .25s;
+                	    -ms-transition: all .25s;
+                	     -o-transition: all .25s;
+                	        transition: all .25s;
+
+                }
+                &:hover {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+                    .planContainer{
+                        .price {
+                            background: #e37a38;
+                            background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
+                            background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
+                            background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        .button {
+                            a {
+                                color: #fff;
+                                background: #e37a38;
+                                background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
+                                background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
+                                background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
+                                border: 1px white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+
+}
 
 @media screen and (min-width: 1025px) {
 
@@ -203,27 +243,32 @@ body {
                 	     -o-transform: scale(1.04);
                 	        transform: scale(1.04);
                             box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-                            .planContainer{
-                                .price {
-                                    background: #e37a38;
-                                    background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
-                                    background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
-                                    background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
-                                    p {
-                                        color: #fff;
-                                    }
-                                }
-                                .button {
-                                    a {
-                                        color: #fff;
-                                        background: #e37a38;
-                                        background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
-                                        background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
-                                        background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
-                                        border: 1px white;
-                                    }
-                                }
+                            border-width: 4px;
+                    -o-border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
+                    border-image: -webkit-linear-gradient(top, #e37a38 0%, #d7485b 100%);
+                    border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
+                    border-image-slice: 1;
+                    .planContainer{
+                        .price {
+                            background: #e37a38;
+                            background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
+                            background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
+                            background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
+                            p {
+                                color: #fff;
                             }
+                        }
+                        .button {
+                            a {
+                                color: #fff;
+                                background: #e37a38;
+                                background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
+                                background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
+                                background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
+                                border: 1px white;
+                            }
+                        }
+                    }
                 }
             }
         }
