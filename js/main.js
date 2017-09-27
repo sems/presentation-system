@@ -16,4 +16,24 @@ $(document).ready(function() {
        $(this).val(text.replace(/[^A-Za-z]/g,''));
    })
 
+
+
+});
+
+$(document).on('click', '.btn-modal', function(e){
+	e.preventDefault();
+
+	var $this = $(e.target);
+
+	$(".modal").addClass("open")
+	$("body").append('<div class="overlay"></div>');
+	$(".overlay").fadeIn(150);
+
+	$('.overlay').on('click', function(){
+		$(this).fadeOut(150, function(){
+			$(this).remove();
+		});
+		$(".modal").removeClass("open");
+	});
+
 });
