@@ -3,10 +3,10 @@
 </head>
 <div class="login-page">
   <div class="form">
-	<form class="login-form">
+	<form class="login-form" action="/dashboard.php" method="post">
 	  <input type="text" placeholder="username"/>
 	  <input type="password" placeholder="password"/>
-	  <button>login</button>
+	  <input type="submit" name="login" value="login" class="login-submit">
 	</form>
   </div>
 </div>

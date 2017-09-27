@@ -1,1 +1,3 @@
-<p>about</p>
+<div class="container">
+	<p>About</p>
+</div>
