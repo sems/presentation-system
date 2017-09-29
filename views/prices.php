@@ -84,16 +84,19 @@
 <div class='modal'>
 <header>Aanvragen</header>
 	<div class='content'>
-		<a href="#" class='facebook-btn'>Login met Facebook <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-		<form>
-			<p>Of registreer:</p>
+		<form method="post" action="buyregister.php">
+			<p>Registreer:</p>
 			<div class='field'>
 				<label for="username">Gebruikers naam</label>
-				<input type='text' id="username" />
+				<input name="b_name" type='text' id="username" />
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input type='email' id="email" />
+				<input name="b_email" type='email' id="email" />
+			</div>
+			<div class='field'>
+				<label for="password">Password</label>
+				<input name="b_password" type='password' id="email" />
 			</div>
 			<div class='field'>
 				<label for="planselect">Kies een pakket</label>
@@ -106,7 +109,7 @@
 				</select>
 			</div>
 			<div class='field'>
-				<input type='submit' class='btn' value="Sign Up" />
+				<input type='submit' class='btn-price' value="Sign Up" />
 			</div>
 		</form>
 	</div>
