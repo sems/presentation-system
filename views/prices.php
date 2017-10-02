@@ -1,3 +1,5 @@
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/tof.jpg"></div>
+<h1 class="m_title">Pakketten</h1>
 <section id="pricePlans">
 	<ul id="plans">
         <?php
@@ -80,31 +82,45 @@
 </section>
 
 <div class='modal'>
-<header>Sign Up</header>
+<header>Aanvragen</header>
 	<div class='content'>
-		<a href="#" class='facebook-btn'>Sign up with facebook <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-		<form>
-			<p>Or Create an Account:</p>
+		<form method="post" action="buyregister.php">
+			<p>Registreer:</p>
 			<div class='field'>
-				<label for="username">Username</label>
-				<input type='text' id="username" />
+				<label for="username">Gebruikers naam</label>
+				<input name="b_name" type='text' id="username" />
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input type='email' id="email" />
+				<input name="b_email" type='email' id="email" />
 			</div>
 			<div class='field'>
-				<label for="planselect">Choose a Plan</label>
+				<label for="password">Password</label>
+				<input name="b_password" type='password' id="email" />
+			</div>
+			<div class='field'>
+				<label for="planselect">Kies een pakket</label>
 				<select id="planselect">
 					<option val="" disabled>Choose a plan</option>
-					<option val="free">Free</option>
-					<option val="premium">Premium</option>
-					<option val="family">Family</option>
+					<option val="chs_1">Pakket 1</option>
+					<option val="chs_2">Pakket 2</option>
+					<option val="chs_3">Pakket 3</option>
+					<option val="chs_4">Pakket 4</option>
 				</select>
 			</div>
 			<div class='field'>
-				<input type='submit' class='btn' value="Sign Up" />
+				<input type='submit' class='btn-price' value="Sign Up" />
 			</div>
 		</form>
 	</div>
+</div>
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/tot.jpg"></div>
+<h1 class="m_title">Waarom?</h1>
+
+<div class="p_exp">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div class="price_quote quote">
+	<p class="quote-content">'Het maakt niet uit wat we onderzoeken of bestuderen, het is allemaal op een of andere manier met elkaar verbonden. Knoop B.V. helpt ons om die verbanden te vinden.'</p>
 </div>
