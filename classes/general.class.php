@@ -17,6 +17,9 @@
             $baseUrl = "http://localhost:63502";
             $ch = curl_init($baseUrl.$job);
 
+            // Test if the url is correct
+            //echo $baseUrl.$job;
+            
             curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
             curl_setopt($ch, CURLOPT_POST, 1);
@@ -26,7 +29,8 @@
             $response  = curl_exec($ch);
 
             curl_close($ch);
-            return $response;
+            //return $response;
+            echo $response;
         }
 
         public function accountAanmaken($data) {
@@ -39,8 +43,7 @@
                     'Password' => $_POST['b_password']
                 );
             */
-            General::postApi($data, "/api/account/aanmaken");
-            return $response;
+            General::postApi($data, "/api/account/create");
         }
         public function accountLogin($data) {
             /*
