@@ -6,4 +6,5 @@
     $sectionActive = "Login";
 
     include_once $template;
+
 ?>

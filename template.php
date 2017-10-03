@@ -29,7 +29,7 @@
                         }
                         echo "'><a href='/controlpanel'>CP</a></li>";
 
-                        echo "<li class='nav-items'><a href='/logout'>Logout</a></li>";
+                        echo "<li class='nav-items'><a href='logout.php'>Logout</a></li>";
                     };
 
                 ?>
