@@ -92,11 +92,11 @@
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input name="b_email" type='email' id="email" />
+				<input name="b_email" type='email' />
 			</div>
 			<div class='field'>
 				<label for="password">Password</label>
-				<input name="b_password" type='password' id="email" />
+				<input name="b_password" type='password' />
 			</div>
 			<div class='field'>
 				<label for="planselect">Kies een pakket</label>
