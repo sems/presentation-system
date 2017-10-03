@@ -13,7 +13,7 @@
             $data_json = json_encode($data);
 
             // NOTE: Only change this line if the servers ip adress changes'
-            // But only
+            // But only,
             $baseUrl = "http://localhost:63502";
             $ch = curl_init($baseUrl.$job);
 
@@ -26,7 +26,7 @@
             $response  = curl_exec($ch);
 
             curl_close($ch);
-            echo $response;
+            return $response;
         }
 
         public function accountAanmaken($data) {
@@ -40,6 +40,7 @@
                 );
             */
             General::postApi($data, "/api/account/aanmaken");
+            return $response;
         }
         public function accountLogin($data) {
             /*
@@ -49,6 +50,7 @@
                 );
             */
             General::postApi($data, "/api/account/login");
+            return $response;
         }
     }
 
