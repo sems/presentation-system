@@ -92,24 +92,28 @@
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input name="b_email" type='email' id="email" />
+				<input name="b_email" type='email' />
 			</div>
 			<div class='field'>
 				<label for="password">Password</label>
-				<input name="b_password" type='password' id="email" />
+				<input name="b_password" type='password' />
 			</div>
 			<div class='field'>
 				<label for="planselect">Kies een pakket</label>
 				<select id="planselect">
 					<option val="" disabled>Choose a plan</option>
-					<option val="chs_1">Pakket 1</option>
-					<option val="chs_2">Pakket 2</option>
-					<option val="chs_3">Pakket 3</option>
-					<option val="chs_4">Pakket 4</option>
+					<option val="pkt_1">Pakket 1</option>
+					<option val="pkt_2">Pakket 2</option>
+					<option val="pkt_3">Pakket 3</option>
+					<option val="pkt_4">Pakket 4</option>
 				</select>
 			</div>
+			<div class="field">
+				<label class="place">Bent u een robot?</label>
+				<div class="g-recaptcha" data-sitekey="6LdpFzMUAAAAAHxXzWptqDfQIk-z-X0271uen3pO"></div>
+			</div>
 			<div class='field'>
-				<input type='submit' class='btn-price' value="Sign Up" />
+				<input type='submit' class='btn-price' value="Betaal en registreer" />
 			</div>
 		</form>
 	</div>
