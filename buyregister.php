@@ -20,8 +20,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         // No succes
         echo "De captcha was incorrect of niet ingevuld!";
     } else {
-        // Succes
+        // If success
+        // Run the following code in side this else
         General::accountAanmaken($data);
-    }
 
+    }
+    // End ReCaptcha
 }

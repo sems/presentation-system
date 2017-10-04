@@ -24,10 +24,10 @@
                     } else {
 
                         echo "<li class='nav-items";
-                        if($sectionActive == 'controlpanel') {
+                        if($sectionActive == 'Controlpanel') {
                             echo ' active';
                         }
-                        echo "'><a href='/controlpanel'>CP</a></li>";
+                        echo "'><a href='controlpanel.php'>CP</a></li>";
 
                         echo "<li class='nav-items'><a href='logout.php'>Logout</a></li>";
                     };
