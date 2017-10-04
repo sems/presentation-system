@@ -5,7 +5,6 @@
   <div class="form">
 		<?php
 		if(!isSet($_GET['error'])) {
-
 		} else {
 			?><p>Er ging iets mis bij het inloggen</p> <?php
 		}

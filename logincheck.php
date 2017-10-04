@@ -9,11 +9,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'Email' => $_POST['l_email'],
         'Password' => $_POST['l_password']
     );
-    General::accountLogin($l_data);
-
-    if(General::accountLogin($l_data) == "") {
+    if(General::accountLogin($l_data) == true) {
       $_SESSION['logged_in'] = true;
-      echo $_SESSION["logged_in"];
       header('Location: index.php');
     } else {
       $_SESSION['logged_in'] = false;
