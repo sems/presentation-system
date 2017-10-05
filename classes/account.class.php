@@ -1,12 +1,12 @@
 <?php
-
+require_once "classes/general.class.php";
 /**
  *
  */
 class Account extends General
 {
 
-    public function accountAanmaken($data) {
+    public function accountCreate($data) {
         // NOTE: Op deze manier moet de data mee gegeven worden aan een post van de api
         // Graag ook op deze manier schrijven, inclusief the inditatiesl
         /*
@@ -16,7 +16,7 @@ class Account extends General
                 'Password' => $_POST['b_password']
             );
         */
-        postApi($data, "/api/account/create");
+        General::postApi($data, "/api/account/create");
     }
     public function accountLogin($data) {
         /*
@@ -37,7 +37,7 @@ class Account extends General
     {
         // Call with General::deleteID("3");
         $job = "/api/Account/".$dataId;
-        $this->deleteApi($job);
+        General::deleteApi($job);
     }
 }
 ?>
