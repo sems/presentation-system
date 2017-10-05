@@ -33,11 +33,23 @@ class Account extends General
         }
     }
 
-    public function deleteAccount($dataId)
+    public function accountDelete($dataId)
     {
         // Call with General::deleteID("3");
         $job = "/api/Account/".$dataId;
         General::deleteApi($job);
+    }
+
+    public function accountEdit($data)
+    {
+        /*
+        $data = array(
+            'id' => '2',
+            'username'=>'dog',
+            'password'=>'tall'
+        );
+        */
+        General::putApi($data, "/api/Account/");
     }
 }
 ?>
