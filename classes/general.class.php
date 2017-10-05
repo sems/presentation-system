@@ -46,6 +46,22 @@
             curl_close($ch);
         }
 
+        public function putApi($data, $job)
+        {
+
+            $data_json = json_encode($data);
+
+            $baseUrl = "http://localhost:63502";
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response  = curl_exec($ch);
+            curl_close($ch);
+        }
     }
 
 ?>
