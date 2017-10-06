@@ -40,7 +40,7 @@ class Account extends General
         General::deleteApi($job);
     }
 
-    public function accountEdit($data)
+    public function accountEdit($data, $dataID)
     {
         /*
         $data = array(
@@ -49,7 +49,7 @@ class Account extends General
             'password'=>'tall'
         );
         */
-        General::putApi($data, "/api/Account/");
+        General::putApi($data, "/api/Account/".$dataID);
     }
 }
 ?>
