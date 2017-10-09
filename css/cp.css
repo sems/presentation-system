@@ -2,7 +2,7 @@
     height: 100%; /* 100% Full-height */
     width: 250px; /* 0 width - change this with JavaScript */
     position: fixed;
-    z-index: 0; /* Stay on top */
+    z-index: 5; /* Stay on top */
     top: 0;
     left: 0;
     background-color: #131619; /* Black*/
@@ -26,6 +26,25 @@
     color: #f1f1f1;
 }
 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 10;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.opennav {
+  background-color: #818181;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 4px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 4;
+  margin-left: 4px;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
