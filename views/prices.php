@@ -108,6 +108,31 @@
 					<option val="pkt_4">Pakket 4</option>
 				</select>
 			</div>
+			<p>Bedrijfs gegevens</p>
+			<div class='field'>
+				<label for="username">Naam</label>
+				<input name="c_name" type='text' id="username" />
+			</div>
+			<div class='field'>
+				<label for="email">Email Address</label>
+				<input name="c_email" type='email' />
+			</div>
+			<div class='field'>
+				<label for="password">Plaats</label>
+				<input name="c_password" type='text' />
+			</div>
+			<div class='field'>
+				<label for="password">Adres</label>
+				<input name="c_password" type='text' />
+			</div>
+			<div class='field'>
+				<label for="password">Telefoon</label>
+				<input name="c_password" type='text' />
+			</div>
+			<div class='field'>
+				<label for="password">Website</label>
+				<input name="c_password" type='text' />
+			</div>
 			<div class="field">
 				<label class="place">Bent u een robot?</label>
 				<div class="g-recaptcha" data-sitekey="6LdpFzMUAAAAAHxXzWptqDfQIk-z-X0271uen3pO"></div>
@@ -116,6 +141,7 @@
 				<input type='submit' class='btn-price' value="Betaal en registreer" />
 			</div>
 		</form>
+
 	</div>
 </div>
 <div class="parallax-window" data-parallax="scroll" data-image-src="img/tot.jpg"></div>
