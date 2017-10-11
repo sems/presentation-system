@@ -88,19 +88,19 @@
 			<p>Registreer:</p>
 			<div class='field'>
 				<label for="username">Gebruikers naam</label>
-				<input name="b_name" type='text' id="username" />
+				<input required name="b_name" type='text' id="username" />
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input name="b_email" type='email' />
+				<input required name="b_email" type='email' />
 			</div>
 			<div class='field'>
 				<label for="password">Password</label>
-				<input name="b_password" type='password' />
+				<input required name="b_password" type='password' />
 			</div>
 			<div class='field'>
 				<label for="planselect">Kies een pakket</label>
-				<select id="planselect">
+				<select required id="planselect">
 					<option val="" disabled>Choose a plan</option>
 					<option val="pkt_1">Pakket 1</option>
 					<option val="pkt_2">Pakket 2</option>
@@ -111,27 +111,27 @@
 			<p>Bedrijfs gegevens</p>
 			<div class='field'>
 				<label for="username">Naam</label>
-				<input name="c_name" type='text' id="username" />
+				<input required name="c_name" type='text' id="username" />
 			</div>
 			<div class='field'>
 				<label for="email">Email Address</label>
-				<input name="c_email" type='email' />
+				<input required name="c_email" type='email' />
 			</div>
 			<div class='field'>
 				<label for="password">Plaats</label>
-				<input name="c_password" type='text' />
+				<input name="c_city" type='text' />
 			</div>
 			<div class='field'>
 				<label for="password">Adres</label>
-				<input name="c_password" type='text' />
+				<input name="c_adres" type='text' />
 			</div>
 			<div class='field'>
 				<label for="password">Telefoon</label>
-				<input name="c_password" type='text' />
+				<input name="c_phone" type='text' />
 			</div>
 			<div class='field'>
 				<label for="password">Website</label>
-				<input name="c_password" type='text' />
+				<input name="c_site" type='text' />
 			</div>
 			<div class="field">
 				<label class="place">Bent u een robot?</label>

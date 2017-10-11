@@ -16,7 +16,8 @@ class Account extends General
                 'Password' => $_POST['b_password']
             );
         */
-        General::postApi($data, "/api/account/create");
+        $registerResponse = General::postApi($data, "/api/account/create");
+        return $registerResponse;
     }
     public function accountLogin($data) {
         /*

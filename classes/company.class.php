@@ -20,7 +20,8 @@ class Company extends General
               "Website": "www.landstede.net"
             );
         */
-        General::postApi($data, "/api/Company");
+        $createResponse = General::postApi($data, "/api/Company/Create");
+        return $createResponse;
     }
 
     public function companyDelete($dataId)
