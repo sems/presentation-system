@@ -27,7 +27,7 @@ class Account extends General
             );
         */
         $loginResponse = General::postApi($data, "/api/account/login");
-        if ($loginResponse === "false") {
+        if ($loginResponse == "false") {
             return false;
         } else {
             return true;
