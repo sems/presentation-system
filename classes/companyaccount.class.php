@@ -15,7 +15,7 @@ class CompanyAccount extends General
                 'CompanyId' => $_POST['c_id'],
             );
         */
-        $registerResponse = General::postApi($data, "/api/companyaccount");
+        $registerResponse = General::postApi($data, "/api/CompanyAccount/Create");
         return $registerResponse;
     }
 }

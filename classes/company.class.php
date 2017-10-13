@@ -30,6 +30,22 @@ class Company extends General
         $job = "/api/Account/".$dataId;
         General::deleteApi($job);
     }
+
+    public function accountEdit($data, $dataID)
+    {
+        /*
+        $data = array()
+          "Name": "Anders",
+          "Email": "info@test.nl",
+          "Phone": "074333689 2458",
+          "Address": "Zwolsestraat 63A",
+          "City": "Zwolle",
+          "Country": "Nederland",
+          "Website": "www.landstede.nl"
+        );
+        */
+        General::putApi($data, "/api/Company/".$dataID);
+    }
 }
 
 ?>
