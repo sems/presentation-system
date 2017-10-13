@@ -86,20 +86,24 @@
 	<div class='content'>
 		<form method="post" action="buyregister.php">
 			<p>Registreer:</p>
+			<?php
+	        if(isSet($rError)){
+	            echo $rError;
+	        }?>
 			<div class='field'>
-				<label for="username">Gebruikers naam</label>
+				<label for="username">Gebruikers naam<span class="required">*</span></label>
 				<input required name="b_name" type='text' id="username" />
 			</div>
 			<div class='field'>
-				<label for="email">Email Address</label>
+				<label for="email">Email Address<span class="required">*</span></label>
 				<input required name="b_email" type='email' />
 			</div>
 			<div class='field'>
-				<label for="password">Password</label>
+				<label for="password">Password<span class="required">*</span></label>
 				<input required name="b_password" type='password' />
 			</div>
 			<div class='field'>
-				<label for="planselect">Kies een pakket</label>
+				<label for="planselect">Kies een pakket<span class="required">*</span></label>
 				<select required id="planselect">
 					<option val="" disabled>Choose a plan</option>
 					<option val="pkt_1">Pakket 1</option>
@@ -110,11 +114,11 @@
 			</div>
 			<p>Bedrijfs gegevens</p>
 			<div class='field'>
-				<label for="username">Naam</label>
+				<label for="username">Naam<span class="required">*</span></label>
 				<input required name="c_name" type='text' id="username" />
 			</div>
 			<div class='field'>
-				<label for="email">Email Address</label>
+				<label for="email">Email Address<span class="required">*</span></label>
 				<input required name="c_email" type='email' />
 			</div>
 			<div class='field'>
@@ -134,7 +138,7 @@
 				<input name="c_site" type='text' />
 			</div>
 			<div class="field">
-				<label class="place">Bent u een robot?</label>
+				<label class="place">Bent u een robot?<span class="required">*</span></label>
 				<div class="g-recaptcha" data-sitekey="6LdpFzMUAAAAAHxXzWptqDfQIk-z-X0271uen3pO"></div>
 			</div>
 			<div class='field'>
