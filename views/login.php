@@ -5,20 +5,10 @@
   <div class="form">
 		<?php
 		if (!isset($_GET['error'])){
-				$message = "";
 		 } else {
 				$error = $_GET['error'];
-				switch($error)
-				{
-						 case 'gegevens':
-								 $message = "gebruikersnaam/password onjuist";
-								 break;
-			 			 case 'captcha':
-								 $message = "de captcha is niet ingevuld";
-								 break;
-				}
+				echo $error;
 		}
-			echo $message;
 		 ?>
 	<form class="login-form" action="logincheck.php" method="POST">
 	  <input type="text" name="l_email" placeholder="email"/>
