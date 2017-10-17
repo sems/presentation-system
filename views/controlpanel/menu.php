@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
-  <a href="accountdetails.php">account gegevens</a>
+  <a href="accountdetails.php">Gegevens</a>
   <a href="presentation.php">Presentaties</a>
-  <a href="controlusers.php">beheer gebruikers</a>
-  <a href="controlscreens.php">beheer schermen</a>
+  <a href="controlusers.php">Gebruikers</a>
+  <a href="controlscreens.php">Schermen</a>
 </div>
