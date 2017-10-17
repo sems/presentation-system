@@ -27,11 +27,8 @@ class Account extends General
             );
         */
         $loginResponse = General::postApi($data, "/api/account/login");
-        if ($loginResponse == "false") {
-            return false;
-        } else {
-            return true;
-        }
+        $loginResponse = json_decode($loginResponse);
+        return $loginResponse;
     }
 
     public function accountDelete($dataId)
