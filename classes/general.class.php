@@ -30,7 +30,7 @@
             *  The $job is added to the baseUrl to get the route to
             *  the API.
             */
-            $baseUrl = "http://localhost:63502";
+            $baseUrl = "http://10.0.0.12:7002";
             $ch = curl_init($baseUrl.$job);
 
             // NOTE: Debugging code.
@@ -149,7 +149,7 @@
           *  The $job is added to the baseUrl to get the route to
           *  the API.
           */
-          $baseUrl = "http://localhost:63502";
+          $baseUrl = "http://10.0.0.12:7002";
           $ch = curl_init($baseUrl.$job);
 
           // NOTE: Debugging code.
