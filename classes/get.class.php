@@ -7,7 +7,9 @@ class Get extends General
         General::getApi("/api/Account");
     }
     public function getFrame() {
-        General::getApi("/api/Frame");
+        $frameresponse = General::getApi("/api/Frame");
+        //$frameresponse;
+        $output = json_decode($frameresponse);
     }
 }
 ?>

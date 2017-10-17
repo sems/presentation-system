@@ -144,7 +144,6 @@
         }
 
         public function getApi($job) {
-
           /*
           *  Only change this varible if the servers ip adress changes.
           *  The $job is added to the baseUrl to get the route to
@@ -176,7 +175,7 @@
 
           // NOTE: Debugging code.
           //echo $response;
-
+          //var_dump($response);
           // End the fuction by returning the response.
           return $response;
 
