@@ -29,12 +29,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       );
      $l_response = Account::accountLogin($l_data);
 
-     if($l_response == true) {
-        $_SESSION['logged_in'] = true;
-        header('Location: index.php');
+     if($l_response->error == false) {
+       $_SESSION['logged_in'] = true;
+       header('Location: index.php');
       } else {
         $_SESSION['logged_in'] = false;
-        header('Location: login.php?error=gegevens');
+        $message = $l_response->message;
+        header('Location: login.php?error={'.$message.'}');
       }
     }
 }
