@@ -107,7 +107,7 @@
     -ms-user-select: none;
     user-select: none;
 }
-.del-modal {
+.del-modal, .edit-modal, .pre-add-modal {
     position: fixed;
 	top: 50%;
 	left: 50%;
@@ -144,6 +144,24 @@
         background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
         background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
         border: 1px white;
+    }
+    .content {
+		background: white;
+		overflow-y: auto;
+		padding: 20px 40px;
+		form {
+			input[type='text'],
+			input[type='email'],
+			input[type='password'],
+			select {
+				width: 100%;
+				padding: 5px 10px;
+				display: block;
+				margin: 10px 0;
+				transition: 0.15s ease-in-out;
+				border: 2px solid rgb(200, 200, 200);
+            }
+        }
     }
 }
 .frameForm {
