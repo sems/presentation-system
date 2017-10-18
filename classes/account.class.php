@@ -38,7 +38,8 @@ class Account extends General
     {
         // Call with General::deleteID("3");
         $job = "/api/Account/".$dataId;
-        General::deleteApi($job);
+        $deleteResponse = General::deleteApi($job);
+        return $deleteResponse;
     }
 
     public function accountEdit($data, $dataID)

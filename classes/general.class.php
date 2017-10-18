@@ -95,7 +95,7 @@
             curl_close($ch);
 
             // NOTE: Debugging code.
-            //echo $response;
+            return $response;
         }
 
         /*

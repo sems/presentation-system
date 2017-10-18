@@ -37,3 +37,18 @@ $(document).on('click', '.btn-modal', function(e){
 	});
 
 });
+
+$(document).on('click', '.btn-del-user', function(e){
+	e.preventDefault();
+
+	var $this = $(e.target);
+    var gotId = $this.val();
+
+    $(".btn-awnser").val(gotId);
+
+	$(".del-modal").addClass("open");
+	$("body").append('<div class="overlay"></div>');
+	$(".overlay").fadeIn(150);
+
+
+});
