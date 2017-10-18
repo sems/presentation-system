@@ -28,19 +28,19 @@ require_once "classes/get.class.php";
                 $name = $data["name"];
                 $email = $data["email"];
                 echo "<tr>";
-                echo '<td>'.$id.'</td>';
-                echo '<td>'.$name.'</td>';
-                echo '<td>'.$email.'</td>';
-
-                echo "<td><a href='/editpage?id=".$data['id']."'> Edit</a></td>";
-                echo "<td>".'<button class= "btn btn-primary" name="id_to_be_deleted" value='.$data['id'].'>Verwijderen</button></td>';
+                    echo '<td>'.$id.'</td>';
+                    echo '<td>'.$name.'</td>';
+                    echo '<td>'.$email.'</td>';
+                    echo "<td><a href='/editpage?id=".$data['id']."'> Edit</a></td>";
+                    echo "<td>";
+                        echo '<form action="deleteuser.php?id='.$id.' method="GET">';
+                            echo '<button class="btn btn-primary" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
+                        echo '</form>';
+                    echo "</td>";
                 echo "</tr>";
             }
 
         ?>
     </table>
-    <input type="submit" name="delete_row" placeholder="Delete selected page(s)" />
-
-    </form>
 
 </div>
