@@ -1,7 +1,13 @@
 <?php require_once 'menu.php'; ?>
 <link rel="stylesheet" type="text/css" href="/css/cp.min.css"/>
 <div class="c_container">
-  <div class="frameForm">
+<button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
+</div>
+<div class="pre-add-modal">
+  <header>
+    Aanmaken
+  </header>
+  <div class="content">
     <form method="post" action="">
       <p>Frame aanmaken</p>
       <?php
