@@ -27,7 +27,6 @@ class Account extends General
             );
         */
         $loginResponse = General::postApi($data, "/api/account/login");
-        $loginResponse = json_decode($loginResponse);
         return $loginResponse;
     }
 
@@ -49,6 +48,12 @@ class Account extends General
         );
         */
         General::putApi($data, "/api/Account/".$dataID);
+    }
+
+    public function accountGet($dataID)
+    {
+        $key = $_SESSION['key'];
+        General::getApi("/api/Account/".$dataID, 1, $key);
     }
 }
 ?>

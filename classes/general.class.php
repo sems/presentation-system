@@ -143,43 +143,49 @@
             // return $response;
         }
 
-        public function getApi($job) {
-          /*
-          *  Only change this varible if the servers ip adress changes.
-          *  The $job is added to the baseUrl to get the route to
-          *  the API.
-          */
-          $baseUrl = "http://10.0.0.12:7002";
-          $ch = curl_init($baseUrl.$job);
+        public function getApi($job, $secure, $token = "false") {
+            /*
+            *  Only change this varible if the servers ip adress changes.
+            *  The $job is added to the baseUrl to get the route to
+            *  the API.
+            */
+            $baseUrl = "http://10.0.0.12:7002";
+            $ch = curl_init($baseUrl.$job);
 
-          // NOTE: Debugging code.
-          //echo $baseUrl.$job;
+            // NOTE: Debugging code.
+            //echo $baseUrl.$job;
 
-          /*
-          *  Preparing the CURL for the API call.
-          *  Letting the server what data it's going to
-          *  receive, JSON in this case. Also give
-          *  It's a GET.
-          *  And give that there will be an return.
-          */
-          curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
-          curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-          curl_setopt($ch, CURLOPT_POST, 0);
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            /*
+            *  Preparing the CURL for the API call.
+            *  Letting the server what data it's going to
+            *  receive, JSON in this case. Also give
+            *  It's a GET.
+            *  And give that there will be an return.
+            */
+            curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
 
-          // Put the response from the API in variable.
-          $response  = curl_exec($ch);
+            $header = array();
+            $header[] = 'Content-type: application/json';
+            if ($secure == 1) {
+                $header[] = 'Authorization: '.$token;
+            }
 
-          // Close the API call.
-          curl_close($ch);
+            curl_setopt($ch, CURLOPT_HTTPHEADER,$header);
 
-          // NOTE: Debugging code.
-          //echo $response;
-          //var_dump($response);
-          // End the fuction by returning the response.
-          return $response;
+            curl_setopt($ch, CURLOPT_POST, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+            // Put the response from the API in variable.
+            $response  = curl_exec($ch);
 
+            // Close the API call.
+            curl_close($ch);
+
+            // NOTE: Debugging code.
+            //echo $response;
+            //var_dump($response);
+            // End the fuction by returning the response.
+            return $response;
         }
     }
 
