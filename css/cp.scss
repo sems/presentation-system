@@ -86,6 +86,21 @@
     border-color: #2c3840;
     color: #fff;
 }
+.btn-del {
+    background: #dc2d30;
+    border-color: #dc2d30;
+    color: #fff;
+}
+.btn-danger {
+    background: #d7485b;
+    border-color: #d7485b;
+    color: #fff;
+}
+.btn-edit {
+    background: #FF9800;
+    border-color: #FF9800;
+    color: #fff;
+}
 .btn {
     display: inline-block;
     margin-bottom: 0;
@@ -124,9 +139,9 @@
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     border-width: 2px;
-    -o-border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
-    border-image: -webkit-linear-gradient(top, #e37a38 0%, #d7485b 100%);
-    border-image: linear-gradient(to bottom, #e37a38 0%, #d7485b 100%);
+    -o-border-image: linear-gradient(to bottom, #2c3840 0%, #d7485b 100%);
+    border-image: -webkit-linear-gradient(top, #2c3840 0%, #d7485b 100%);
+    border-image: linear-gradient(to bottom, #2c3840 0%, #d7485b 100%);
     border-image-slice: 1;
 
     font-weight: 700;
@@ -139,10 +154,10 @@
 	header{
         padding: 20px 40px;
 		color: white;
-        background: #e37a38;
-        background: -webkit-gradient(left top, right top, color-stop(0%, #e37a38), color-stop(100%, #d7485b));
-        background: -webkit-linear-gradient(left, #e37a38 0%, #d7485b 100%);
-        background: linear-gradient(to right, #e37a38 0%, #d7485b 100%);
+        background: #2c3840;
+        background: -webkit-gradient(left top, right top, color-stop(0%, #2c3840), color-stop(100%, #d7485b));
+        background: -webkit-linear-gradient(left, #2c3840 0%, #d7485b 100%);
+        background: linear-gradient(to right, #2c3840 0%, #d7485b 100%);
         border: 1px white;
     }
     .content {
@@ -160,6 +175,24 @@
 				margin: 10px 0;
 				transition: 0.15s ease-in-out;
 				border: 2px solid rgb(200, 200, 200);
+            }
+        }
+    }
+    .btn-submit {
+        padding: 20px 20px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		background: #2c3840;
+		border-radius: 5px;
+		transition: 0.15s ease-in-out;
+        i {
+            font-size: 25px;
+            &:hover{
+                background: lighten(#2c3840, 10%);
             }
         }
     }

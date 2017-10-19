@@ -32,10 +32,10 @@ require_once "classes/get.class.php";
                     echo '<td>'.$name.'</td>';
                     echo '<td>'.$email.'</td>';
                     echo "<td>";
-                        echo '<button class="btn btn-primary" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
+                        echo '<button class="btn btn-primary btn-edit-user" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
                     echo "</td>";
                     echo "<td>";
-                        echo '<button class="btn btn-primary btn-del-user" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
+                        echo '<button class="btn btn-del btn-del-user" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
                     echo "</td>";
                 echo "</tr>";
             }
@@ -46,14 +46,48 @@ require_once "classes/get.class.php";
 
 </div>
 <div class='del-modal'>
-<header>Verwijderen</header>
+    <header>Verwijderen</header>
     <div class='content'>
         <form action="deleteuser.php" method="POST">
             <p>Weet u zeker dat u dit account wil verwijderen.</p>
 
-            <button class="btn btn-primary btn-awnser" type="submit" name="delyes" value="" >Ja</button>
-            <button class="btn btn-primary" type="submit" name="delno" value="" >Nee</button>
+            <input class="in-awnser" name="idtodel" type="hidden" value="">
 
+            <button class="btn btn-primary" type="submit" name="delno" >Annuleer</button>
+
+            <button class="btn btn-danger " type="submit" name="delyes" >Verwijder</button>
+
+
+        </form>
+
+    </div>
+</div>
+
+<div class='edit-modal'>
+    <header>Bijwerking</header>
+    <div class='content'>
+        <form action="editeuser.php" method="POST">
+            <p>Hier kunt u uw account bijwerking.</p>
+
+            <div class='field'>
+				<label for="username">Gebruikers naam<span class="required">*</span></label>
+				<input required name="b_edit_name" type='text' id="username" />
+			</div>
+			<div class='field'>
+				<label for="email">Email Address<span class="required">*</span></label>
+				<input required name="b_edit_email" type='email' />
+			</div>
+			<div class='field'>
+				<label for="password">Wachtwoord<span class="required">*</span></label>
+				<input required name="b_edit_password" type='password' />
+			</div>
+			<div class='field'>
+				<label for="password">Herhaal wachtwoord<span class="required">*</span></label>
+				<input required name="b_edit_repeat_password" type='password' />
+			</div>
+            <div class='field'>
+				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Bijwerken" />
+			</div>
 
         </form>
 

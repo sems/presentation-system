@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 });
 
+// Add an account
 $(document).on('click', '.btn-modal', function(e){
 	e.preventDefault();
 
@@ -37,7 +38,7 @@ $(document).on('click', '.btn-modal', function(e){
 	});
 
 });
-
+// Add an presentation
 $(document).on('click', '.btn-pre-add', function(e){
 	e.preventDefault();
 
@@ -56,13 +57,13 @@ $(document).on('click', '.btn-pre-add', function(e){
 
 });
 
+// Delete user.
 $(document).on('click', '.btn-del-user', function(e){
 	e.preventDefault();
 
 	var $this = $(e.target);
     var gotId = $this.val();
 
-    console.log(gotId);
     $('input[name="idtodel"]').val(gotId);
 
 	$(".del-modal").addClass("open");
@@ -70,17 +71,23 @@ $(document).on('click', '.btn-del-user', function(e){
 	$(".overlay").fadeIn(150);
 });
 
+// Edit user
+// NOTE: EDIT
 $(document).on('click', '.btn-edit-user', function(e){
 	e.preventDefault();
 
 	var $this = $(e.target);
     var gotId = $this.val();
 
-    console.log(gotId);
-    $('input[name="idtodel"]').val(gotId);
 
 	$(".edit-modal").addClass("open");
 	$("body").append('<div class="overlay"></div>');
 	$(".overlay").fadeIn(150);
 
+    $('.overlay').on('click', function(){
+		$(this).fadeOut(150, function(){
+			$(this).remove();
+		});
+		$(".edit-modal").removeClass("open");
+	});
 });

@@ -1,17 +1,14 @@
 <?php
     require_once "classes/account.class.php";
-    $awNo =  $_POST['delyes'];
-    $awYes = $_POST['delno'];
-
+    $idToDel = $_POST['idtodel'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //something posted
-        if (isset($awYes)) {
-            $delResponse = Account::accountDelete($awYes);
-            echo $delResponse;
+        if (isset($_POST['delyes'])) {
+            $delResponse = Account::accountDelete($idToDel);
+            header('location: controlusers.php');
         } else {
-            header('controlusers.php');
-            exit;
+            header('location: controlusers.php');
         }
     }
 
