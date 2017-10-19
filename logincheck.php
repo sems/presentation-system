@@ -32,11 +32,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       );
      $l_response = Account::accountLogin($l_data);
      $l_response = json_decode($l_response);
+     $token = $l_response->data->token;
      if($l_response->error == false) {
-        $token = $l_response->data->token;
-        $b = "Bearer ";
-        $key = $b.$token;
-        $_SESSION['key'] = $key;
+        $_SESSION['key'] = "Bearer " .$token;
         $_SESSION['logged_in'] = true;
         $message = $l_response->message;
         header('Location: index.php?message='.$message);
