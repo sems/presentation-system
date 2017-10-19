@@ -5,6 +5,9 @@ session_start();
 if(!isset($_SESSION['logged_in'])) {
   $_SESSION['logged_in'] = false;
 }
+if(!isset($_SESSION["key"])) {
+  $_SESSION["key"] = "";
+}
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   // start chapta
 
@@ -28,14 +31,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           'Password' => $_POST['l_password']
       );
      $l_response = Account::accountLogin($l_data);
-
+     $l_response = json_decode($l_response);
      if($l_response->error == false) {
-       $_SESSION['logged_in'] = true;
-       header('Location: index.php');
+        $token = $l_response->data->token;
+        $_SESSION['key'] = "Bearer " .$token;
+
+        $_SESSION['logged_in'] = true;
+        $message = $l_response->message;
+        header('Location: index.php?message='.$message);
       } else {
         $_SESSION['logged_in'] = false;
         $message = $l_response->message;
-        header('Location: login.php?error={'.$message.'}');
+        header('Location: login.php?error='.$message);
       }
     }
 }
