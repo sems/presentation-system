@@ -66,9 +66,9 @@ require_once "classes/get.class.php";
 <div class='edit-modal'>
     <header>Bijwerking</header>
     <div class='content'>
-        <form action="editeuser.php" method="POST">
-            <p>Hier kunt u uw account bijwerking.</p>
+        <form action="edituser.php" method="POST">
 
+            <input class="in-awnser" name="idtoedit" type="hidden" value="">
             <div class='field'>
 				<label for="username">Gebruikers naam<span class="required">*</span></label>
 				<input required name="b_edit_name" type='text' id="username" />
@@ -88,7 +88,7 @@ require_once "classes/get.class.php";
             <div class='field'>
 				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Bijwerken" />
 			</div>
-
+            <p>Velden met een <span class="required">*</span> zijn verplicht.</p>
         </form>
 
     </div>

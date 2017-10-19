@@ -69,6 +69,13 @@ $(document).on('click', '.btn-del-user', function(e){
 	$(".del-modal").addClass("open");
 	$("body").append('<div class="overlay"></div>');
 	$(".overlay").fadeIn(150);
+
+    $('.overlay').on('click', function(){
+		$(this).fadeOut(150, function(){
+			$(this).remove();
+		});
+		$(".del-modal").removeClass("open");
+	});
 });
 
 // Edit user
@@ -79,6 +86,7 @@ $(document).on('click', '.btn-edit-user', function(e){
 	var $this = $(e.target);
     var gotId = $this.val();
 
+    $('input[name="idtoedit"]').val(gotId);
 
 	$(".edit-modal").addClass("open");
 	$("body").append('<div class="overlay"></div>');
@@ -89,5 +97,7 @@ $(document).on('click', '.btn-edit-user', function(e){
 			$(this).remove();
 		});
 		$(".edit-modal").removeClass("open");
+
+        $('input[name="idtoedit"]').val();
 	});
 });

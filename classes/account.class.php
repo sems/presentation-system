@@ -50,10 +50,10 @@ class Account extends General
         General::putApi($data, "/api/Account/".$dataID);
     }
 
-    public function accountGet($dataID)
+    public function accountGet($dataID, $key)
     {
-        $key = $_SESSION['key'];
-        General::getApi("/api/Account/".$dataID, 1, $key);
+        $getAccount = General::getApi("/api/Account/".$dataID, 1, $key);
+        return $getAccount;
     }
 }
 ?>
