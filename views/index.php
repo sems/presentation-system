@@ -5,5 +5,7 @@
 				$message = $_GET['message'];
 				echo $message;
 		}
+    echo "</br>";
+    echo $_SESSION['key'];
     ?>
 </div>

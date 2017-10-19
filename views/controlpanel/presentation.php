@@ -1,5 +1,4 @@
 <?php require_once 'menu.php'; ?>
-<link rel="stylesheet" type="text/css" href="/css/cp.min.css"/>
 <div class="c_container">
 <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
 <?php
