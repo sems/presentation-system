@@ -1,5 +1,9 @@
 <div class="parallax-window" data-parallax="scroll" data-image-src="img/tof.jpg"></div>
 <h1 class="m_title">Pakketten</h1>
+<?php
+if(isSet($rError)){
+	echo $rError;
+}?>
 <section id="pricePlans">
 	<ul id="plans">
         <?php
@@ -86,10 +90,7 @@
 	<div class='content'>
 		<form method="post" action="buyregister.php">
 			<p>Registreer:</p>
-			<?php
-	        if(isSet($rError)){
-	            echo $rError;
-	        }?>
+
 			<div class='field'>
 				<label for="username">Gebruikers naam<span class="required">*</span></label>
 				<input required name="b_name" type='text' id="username" />
@@ -99,8 +100,12 @@
 				<input required name="b_email" type='email' />
 			</div>
 			<div class='field'>
-				<label for="password">Password<span class="required">*</span></label>
+				<label for="password">Wachtwoord<span class="required">*</span></label>
 				<input required name="b_password" type='password' />
+			</div>
+			<div class='field'>
+				<label for="password">Herhaal wachtwoord<span class="required">*</span></label>
+				<input required name="b_repeat_password" type='password' />
 			</div>
 			<div class='field'>
 				<label for="planselect">Kies een pakket<span class="required">*</span></label>
