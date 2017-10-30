@@ -38,7 +38,7 @@ class Account extends General
         return $deleteResponse;
     }
 
-    public function accountEdit($data, $dataID)
+    public function accountEdit($data, $dataID, $key)
     {
         /*
         $data = array(
@@ -47,7 +47,8 @@ class Account extends General
             'password'=>'tall'
         );
         */
-        General::putApi($data, "/api/Account/".$dataID);
+        $editResponse = General::putApi($data, "/api/Account/".$dataID, 1, $key);
+        return $editResponse;
     }
 
     public function accountGet($dataID, $key)

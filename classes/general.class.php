@@ -105,7 +105,7 @@
         * must be tested when API is ready for it.
         * NOTE the return is not turned on(commend) yet.
         */
-        public function putApi($data, $job)
+        public function putApi($data, $job, $secure, $token = "false")
         {
             // Encoding the received $data for the API.
             $data_json = json_encode($data);
@@ -125,7 +125,14 @@
             *  PUT. And that there will be an return.
             */
             curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+
+            $header = array();
+            $header[] = 'Content-type: application/json';
+            if ($secure == 1) {
+                $header[] = 'Authorization: '.$token;
+            }
+            curl_setopt($ch, CURLOPT_HTTPHEADER,$header);
+
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
             curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -140,7 +147,7 @@
             //echo $response;
 
             // End the fuction by returning the response.
-            // return $response;
+            return $response;
         }
 
         public function getApi($job, $secure, $token = "false") {

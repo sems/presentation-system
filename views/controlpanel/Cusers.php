@@ -1,12 +1,16 @@
 <?php
 require_once 'menu.php';
-require_once "classes/get.class.php";
+require_once "classes/account.class.php";
  ?>
 <div class="c_container">
     <?php
-    if(isSet($done)){
-        echo $done;
-    }?><br/>
+    if(isSet($_SESSION['msg'])){
+        //Access your POST variables
+        $temp = $_SESSION['msg'];
+        echo $temp."<br/>";
+        //Unset the useless session variable
+        unset($_SESSION['msg']);
+    }?>
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
@@ -16,7 +20,7 @@ require_once "classes/get.class.php";
             <th>Verwijderen</th>
         </tr>
         <?php
-            $r = Get::getUsers();
+            $r = Account::getUsers();
 
             $search_results = json_decode($r, true);
             if ($search_results === NULL) die('Error parsing json');
