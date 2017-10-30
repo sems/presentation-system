@@ -1,11 +1,12 @@
 <div class="container">
     <h1>Welkom bij Knoop!</h1>
     <?php
-    if (isset($_GET['message'])){
-				$message = $_GET['message'];
-				echo $message;
-		}
-    echo "</br>";
-    echo $_SESSION['key'];
+    if(isSet($_SESSION['key'])){
+        //Access your POST variables
+        $key = $_SESSION['key'];
+        echo $key."<br/>";
+    }else {
+        echo "Er is geen token";
+    }
     ?>
 </div>
