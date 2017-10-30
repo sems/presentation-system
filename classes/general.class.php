@@ -30,7 +30,7 @@
             *  The $job is added to the baseUrl to get the route to
             *  the API.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             // NOTE: Debugging code.
@@ -69,14 +69,14 @@
         * NOTE: this function will not return anything
         * by default, it must be echo'd when debugging.
         */
-        public function deleteApi($job) {
+        public function deleteApi($job , $secure, $token = "false") {
 
             /*
             *  Only change this varible if the servers ip adress changes.
             *  The $job is added to the baseUrl to select the ID that
             *  must be deleted.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl =  "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             /*
@@ -85,6 +85,14 @@
             *  delete. And that there will be an return.
             */
             curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
+
+            $header = array();
+            $header[] = 'Content-type: application/json';
+            if ($secure == 1) {
+                $header[] = 'Authorization: '.$token;
+            }
+            curl_setopt($ch, CURLOPT_HTTPHEADER,$header);
+
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -114,7 +122,7 @@
             * Only change this varible if the servers ip adress changes.
             * Not sure if parameters must be given with $ch; the init.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             /*
@@ -156,7 +164,7 @@
             *  The $job is added to the baseUrl to get the route to
             *  the API.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             // NOTE: Debugging code.

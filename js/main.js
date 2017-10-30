@@ -15,9 +15,6 @@ $(document).ready(function() {
        var text=$(this).val();
        $(this).val(text.replace(/[^A-Za-z]/g,''));
    })
-
-
-
 });
 
 // Add an account
@@ -57,8 +54,28 @@ $(document).on('click', '.btn-pre-add', function(e){
 
 });
 
-// Delete user.
-$(document).on('click', '.btn-del-user', function(e){
+// Add an presentation
+$(document).on('click', '.btn-add', function(e){
+	e.preventDefault();
+
+	var $this = $(e.target);
+
+	$(".add-modal").addClass("open")
+	$("body").append('<div class="overlay"></div>');
+	$(".overlay").fadeIn(150);
+
+	$('.overlay').on('click', function(){
+		$(this).fadeOut(150, function(){
+			$(this).remove();
+		});
+		$(".add-modal").removeClass("open");
+	});
+
+});
+
+// Delete .
+// NOTE: EDIT
+$(document).on('click', '.btn-del', function(e){
 	e.preventDefault();
 
 	var $this = $(e.target);
@@ -78,9 +95,9 @@ $(document).on('click', '.btn-del-user', function(e){
 	});
 });
 
-// Edit user
+// Edit
 // NOTE: EDIT
-$(document).on('click', '.btn-edit-user', function(e){
+$(document).on('click', '.user-table .btn-edit', function(e){
 	e.preventDefault();
 
 	var $this = $(e.target);

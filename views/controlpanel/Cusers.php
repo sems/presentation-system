@@ -36,10 +36,10 @@ require_once "classes/account.class.php";
                     echo '<td>'.$name.'</td>';
                     echo '<td>'.$email.'</td>';
                     echo "<td>";
-                        echo '<button class="btn btn-primary btn-edit-user" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
+                        echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
                     echo "</td>";
                     echo "<td>";
-                        echo '<button class="btn btn-del btn-del-user" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
+                        echo '<button class="btn btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
                     echo "</td>";
                 echo "</tr>";
             }

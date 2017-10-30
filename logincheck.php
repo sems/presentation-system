@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['logged_in'] = true;
 
             $message = $l_response->message;
-            $_SESSION['msg'] = $message;
+            //$_SESSION['msg'] = $message;
             header('Location: index.php');
         } else {
             $_SESSION['logged_in'] = false;
