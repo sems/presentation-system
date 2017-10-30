@@ -52,8 +52,14 @@ class Account extends General
 
     public function accountGet($dataID, $key)
     {
+        // accountGet(1, 1, $key)
         $getAccount = General::getApi("/api/Account/".$dataID, 1, $key);
         return $getAccount;
+    }
+
+    public function getUsers() {
+        $response = General::getApi("/api/Account", 0);
+        return $response;
     }
 }
 ?>
