@@ -56,6 +56,7 @@
 
         ?>
     </table>
+    <button class="btn btn-add" type="submit" name="add">Toevoegen</button>
 </div>
 
 <div class='add-modal'>

@@ -56,7 +56,7 @@
 
         ?>
     </table>
-    
+    <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
 </div>
 
 
