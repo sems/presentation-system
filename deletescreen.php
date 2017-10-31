@@ -1,5 +1,6 @@
 <?php
     require_once "classes/receiver.class.php";
+    session_start();
     $idToDel = $_POST['idtodel'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

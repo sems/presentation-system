@@ -75,12 +75,12 @@
 				<label for="planselect">Direct actief?<span class="required">*</span></label>
 				<select name="add_screen_active" required id="planselect">
 					<option val="" disabled>Kies hier</option>
-					<option val="1">Ja</option>
-					<option val="0">Nee</option>
+					<option val="True">Ja</option>
+					<option val="False">Nee</option>
 				</select>
 			</div>
             <div class='field'>
-				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Bijwerken" />
+				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Toevoegen" />
 			</div>
             <p>Velden met een <span class="required">*</span> zijn verplicht.</p>
         </form>

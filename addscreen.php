@@ -1,13 +1,31 @@
 <?php
 require_once "classes/receiver.class.php";
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $rData = array(
+    $key = $_SESSION['key'];
+    if ($_POST['add_screen_active'] == True) {
+        $active = "True";
+    } else {
+        $active = "False";
+    }
+    $data = array(
         'UserId' => $_POST['add_screen_user_id'],
         'Name' => $_POST['add_screen_name'],
-        'Active' => $_POST['add_screen_active']
+        'Active' => $active,
     );
     // If success with the ReCaptcha
-    $aCreate = Receiver::createReceiver($rData, $rData);
+    $aCreate = Receiver::createReceiver($data, $key);
+    $message = "De Reciever is aangemaakt";
+    //Dump your POST variables
+    $_SESSION['msg'] = $message;
+    //echo $message;
+    header('location: controlscreens.php');
+} else {
+    $message = "Er is geen POST. Neem contact op met uw site adminstrator";
+    //Dump your POST variables
+    $_SESSION['msg'] = $message;
+    //echo $message;
+    header('location: controlscreens.php');
 }
  ?>

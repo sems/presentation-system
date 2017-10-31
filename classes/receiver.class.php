@@ -6,7 +6,7 @@ require_once "classes/general.class.php";
 class Receiver extends General
 {
     public function createReceiver($data,$key) {
-        $response = General::postApi("/api/Receiver/Create", 1, $key);
+        $response = General::postApi($data, "/api/Receiver/Create", 1, $key);
         return $response;
     }
 

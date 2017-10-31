@@ -20,7 +20,7 @@
     class General
     {
         // Base function for posting to the C# API.
-        public function postApi($data, $job)
+        public function postApi($data, $job, $secure, $token = "false")
         {
             // Encoding the received $data for the API.
             $data_json = json_encode($data);
@@ -44,7 +44,14 @@
             *  And give that there will be an return.
             */
             curl_setopt($ch, CURLOPT_URL, $baseUrl.$job);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_json)));
+
+            $header = array();
+            $header[] = 'Content-type: application/json';
+            if ($secure == 1) {
+                $header[] = 'Authorization: '.$token;
+            }
+            curl_setopt($ch, CURLOPT_HTTPHEADER,$header);
+
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

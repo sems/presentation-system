@@ -30,11 +30,11 @@ class Account extends General
         return $loginResponse;
     }
 
-    public function accountDelete($dataId)
+    public function accountDelete($dataId, $key)
     {
         // Call with General::deleteID("3");
         $job = "/api/Account/".$dataId;
-        $deleteResponse = General::deleteApi($job);
+        $deleteResponse = General::deleteApi($job , 1, $key);
         return $deleteResponse;
     }
 
