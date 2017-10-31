@@ -24,7 +24,7 @@
             <th>Verwijderen</th>
         </tr>
         <?php
-            $r = Frame::getFrame();
+            $r = Frame::getFrames();
 
             $search_results = json_decode($r, true);
             if ($search_results === NULL) die('Error parsing json');
@@ -65,7 +65,7 @@
 <div class="pre-add-modal">
   <header>Aanmaken</header>
   <div class="content">
-    <form method="post" action="POST">
+    <form action="createframe.php" method="post">
       <p>Frame aanmaken</p>
       <div class='field'>
         <label for="title">Titel<span class="required">*</span></label>
@@ -84,11 +84,11 @@
         <input name="media" type='text' />
       </div>
       <div class='field'>
-        <label for="text">Omschrijving</label>
-        <textarea name="text" rows="8" cols="80"></textarea>
+        <label for="text">Omschrijving<span class="required">*</span></label>
+        <textarea required name="text" rows="8" cols="80"></textarea>
       </div>
       <div class='field'>
-        <input type='submit' class='btn-primary' value="Aanmaken" />
+        <input type='submit' name="createframe" class='btn-primary' value="Aanmaken" />
       </div>
     </form>
   </div>
@@ -97,7 +97,7 @@
 <div class='del-modal'>
     <header>Verwijderen</header>
     <div class='content'>
-        <form action="deleteslide.php" method="POST">
+        <form action="deleteframe.php" method="POST">
             <p>Weet u zeker dat u dit scherm wil verwijderen.</p>
 
             <input class="in-awnser" name="idtodel" type="hidden" value="">

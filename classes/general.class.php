@@ -30,7 +30,7 @@
             *  The $job is added to the baseUrl to get the route to
             *  the API.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             // NOTE: Debugging code.
@@ -83,7 +83,7 @@
             *  The $job is added to the baseUrl to select the ID that
             *  must be deleted.
             */
-            $baseUrl =  "http://10.0.0.12:7002";
+            $baseUrl =  "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             /*
@@ -129,7 +129,7 @@
             * Only change this varible if the servers ip adress changes.
             * Not sure if parameters must be given with $ch; the init.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             /*
@@ -171,7 +171,7 @@
             *  The $job is added to the baseUrl to get the route to
             *  the API.
             */
-            $baseUrl = "http://10.0.0.12:7002";
+            $baseUrl = "http://tfs.saldev.nl:7002";
             $ch = curl_init($baseUrl.$job);
 
             // NOTE: Debugging code.
