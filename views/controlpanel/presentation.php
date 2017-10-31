@@ -56,19 +56,7 @@
 
         ?>
     </table>
-    <?php
-    $url = 'https://www.youtube.com/watch?v=t-601tSRnfE';
-    preg_match(
-        '/[\\?\\&]v=([^\\?\\&]+)/',
-        $url,
-        $matches
-    );
-    $ids = $matches[1];
-
-    $width = '640';
-    $height = '385';
-    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $ids .'" frameborder="0" allowfullscreen></iframe>';
-    ?>
+    
 </div>
 
 
