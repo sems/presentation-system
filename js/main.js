@@ -74,7 +74,6 @@ $(document).on('click', '.btn-add', function(e){
 });
 
 // Delete .
-// NOTE: EDIT
 $(document).on('click', '.btn-del', function(e){
 	e.preventDefault();
 
