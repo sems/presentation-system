@@ -11,7 +11,7 @@
         //Unset the useless session variable
         unset($_SESSION['msg']);
     }?>
-    <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
+    <button type="button" class="btn-add btn" name="button">Presentatie aanmaken</button>
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
@@ -77,35 +77,67 @@
 
         ?>
     </table>
-    <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
+    <button type="button" class="btn-add btn" name="button">Presentatie aanmaken</button>
 </div>
 
 
 
 
-<div class="pre-add-modal">
+<div class="add-modal">
   <header>Aanmaken</header>
   <div class="content">
-    <form action="createframe.php" method="post">
+    <form action="addpresentation.php" method="post">
       <p>Frame aanmaken</p>
       <div class='field'>
         <label for="title">Titel<span class="required">*</span></label>
-        <input required name="title" type='text' id="title"/>
+        <input required name="name" type='text' id="title"/>
       </div>
       <div class='field'>
-        <label for="duration">Looptijd(in seconden)<span class="required">*</span></label>
-        <input required name="duration" type='text' />
+        <label for="duration">CompanyId<span class="required">*</span></label>
+        <input required name="company_id" type='text' />
       </div>
       <div class='field'>
-        <label for="media">Video of afbeelding (url) </label>
-        <input name="media" type='text' />
+        <label for="duration">Frame 1<span class="required">*</span></label>
+        <input required name="frame_1" type='text' />
       </div>
       <div class='field'>
-        <label for="text">Omschrijving<span class="required">*</span></label>
-        <textarea required name="text" rows="8" cols="80"></textarea>
+        <label for="duration">Frame 2</label>
+        <input required name="frame_2" type='text' />
       </div>
       <div class='field'>
-        <input type='submit' name="createframe" class='btn-primary' value="Aanmaken" />
+        <label for="duration">Frame 3</label>
+        <input required name="frame_3" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 4</label>
+        <input required name="frame_4" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 5</label>
+        <input required name="frame_5" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 6</label>
+        <input required name="frame_6" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 7</label>
+        <input required name="frame_7" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 8</label>
+        <input required name="frame_9" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 9</label>
+        <input required name="frame_9" type='text' />
+      </div>
+      <div class='field'>
+        <label for="duration">Frame 10</label>
+        <input required name="frame_10" type='text' />
+      </div>
+      <div class='field'>
+        <input type='submit' name="createpresentation" class='btn btn-primary' value="Aanmaken" />
       </div>
     </form>
   </div>
@@ -131,28 +163,59 @@
 <div class='edit-modal'>
     <header>Bijwerking</header>
     <div class='content'>
-        <form action="editframe.php" method="POST">
-            <input class="in-awnser" name="idtoedit" type="hidden" value="">
-			<div class='field'>
-				<label for="edit_slide_title">Title<span class="required">*</span></label>
-				<input required id="edit_slide_title" name="edit_slide_title" type='text' />
-			</div>
-            <div class='field'>
-				<label for="edit_slide_dur">Duration<span class="required">*</span></label>
-				<input required id="edit_slide_dur" name="edit_slide_dur" type='text' />
-			</div>
-            <div class='field'>
-				<label for="edit_slide_media">Media<span class="required">*</span></label>
-				<input id="edit_slide_media" name="edit_slide_media" type='text' />
-			</div>
-            <div class='field'>
-				<label for="edit_slide_text">Text<span class="required">*</span></label>
-				<textarea required id="edit_slide_text" name="edit_slide_text"></textarea>
-			</div>
+        <form action="editpresentation.php" method="POST">
+          <div class='field'>
+            <label for="title">Titel<span class="required">*</span></label>
+            <input required name="name" type='text' id="title"/>
+          </div>
+          <div class='field'>
+            <label for="duration">CompanyId<span class="required">*</span></label>
+            <input required name="company_id" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 1<span class="required">*</span></label>
+            <input required name="frame_1" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 2</label>
+            <input required name="frame_2" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 3</label>
+            <input required name="frame_3" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 4</label>
+            <input required name="frame_4" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 5</label>
+            <input required name="frame_5" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 6</label>
+            <input required name="frame_6" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 7</label>
+            <input required name="frame_7" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 8</label>
+            <input required name="frame_9" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 9</label>
+            <input required name="frame_9" type='text' />
+          </div>
+          <div class='field'>
+            <label for="duration">Frame 10</label>
+            <input required name="frame_10" type='text' />
+          </div>
 
-            <div class='field'>
-				<input name="b_edit_submit" type='submit' class='btn btn-primary' value="Bijwerken" />
-			</div>
+          <div class='field'>
+				    <input name="b_edit_submit" type='submit' class='btn btn-primary' value="Bijwerken" />
+			    </div>
             <p>Velden met een <span class="required">*</span> zijn verplicht.</p>
         </form>
 

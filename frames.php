@@ -6,7 +6,7 @@ if(!isset($_SESSION["logged_in"])) {
     $view = "views/login.php";
     $sectionActive = "Login";
 } elseif(isset($_SESSION["logged_in"]) || $_SESSION['logged_in'] == true) {
-    $view = "views/controlpanel/presentation.php";
+    $view = "views/controlpanel/frames.php";
     $sectionActive = "Controlpanel";
 }
     include_once $template;

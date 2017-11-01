@@ -20,6 +20,7 @@
             <th>Media</th>
             <th>Tekst</th>
             <th>Bewerken</th>
+            <th>Preview</th>
             <th>Verwijderen</th>
         </tr>
         <?php
@@ -44,6 +45,9 @@
                     echo '<td>'.$tekst.'</td>';
                     echo "<td>";
                         echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
+                    echo "</td>";
+                    echo "<td>";
+                        echo '<button class="btn btn-primary" type="submit" name="edit" value="'.$id.'" >Preview</button>';
                     echo "</td>";
                     echo "<td>";
                         echo '<button class="btn btn-primary btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
