@@ -12,7 +12,7 @@ class Frame extends General
         return $response;
     }
 
-    public function frameCreate($data) {
+    public function frameCreate($data, $key) {
         // NOTE: Op deze manier moet de data mee gegeven worden aan een post van de api
         // Graag ook op deze manier schrijven, inclusief the inditatiesl
         /*
@@ -23,7 +23,7 @@ class Frame extends General
                 'text' => $_POST['text']
             );
         */
-        $fCreate = General::postApi($data, "/api/frame/Create");
+        $fCreate = General::postApi($data, "/api/frame/Create", 1);
         return $fCreate;
     }
 

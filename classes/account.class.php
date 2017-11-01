@@ -16,7 +16,7 @@ class Account extends General
                 'Password' => $_POST['b_password']
             );
         */
-        $registerResponse = General::postApi($data, "/api/account/create");
+        $registerResponse = General::postApi($data, "/api/account/create", 0);
         return $registerResponse;
     }
     public function accountLogin($data) {
@@ -26,7 +26,7 @@ class Account extends General
                 'Password' => $_POST['l_password']
             );
         */
-        $loginResponse = General::postApi($data, "/api/account/login");
+        $loginResponse = General::postApi($data, "/api/account/login", 0);
         return $loginResponse;
     }
 

@@ -5,7 +5,8 @@ require_once "classes/general.class.php";
  */
 class Presentation extends General
 {
-    public function createPresentation($data,$key) {
+    public function createPresentation($data, $key) {
+      
         $response = General::postApi($data, "/api/Presentation/Create", 1, $key);
         return $response;
     }

@@ -16,7 +16,6 @@
         <tr>
             <th>Id</th>
             <th>Titel</th>
-            <th>Positie</th>
             <th>Lengte</th>
             <th>Media</th>
             <th>Tekst</th>
@@ -33,7 +32,6 @@
             foreach ($search_results as $data) {
 
                 $id = $data["id"];
-                $order = $data["orderIndex"];
                 $duration = $data["duration"];
                 $title = $data["title"];
                 $media = $data["media"];
@@ -41,7 +39,6 @@
                 echo "<tr>";
                     echo '<td>'.$id.'</td>';
                     echo '<td>'.$title.'</td>';
-                    echo '<td>'.$order.'</td>';
                     echo '<td>'.$duration.'</td>';
                     echo '<td>'.$media.'</td>';
                     echo '<td>'.$tekst.'</td>';
