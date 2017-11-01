@@ -16,7 +16,8 @@
                 'text' => $_POST['text']
             );
         }
-        $r = Frame::frameCreate($data);
+        $token = $_SESSION['key'];
+        $r = Frame::frameCreate($data, $token);
         $message = "Frame is succesvol aangemaakt";
         //Dump your POST variables
         $_SESSION['msg'] = $message;

@@ -20,18 +20,18 @@ class Company extends General
               "Website": "www.landstede.net"
             );
         */
-        $createResponse = General::postApi($data, "/api/Company/Create");
+        $createResponse = General::postApi($data, "/api/Company/Create", 0);
         return $createResponse;
     }
 
-    public function companyDelete($dataId)
+    public function companyDelete($dataId, $key)
     {
         // Call with General::deleteID("3");
         $job = "/api/Account/".$dataId;
-        General::deleteApi($job);
+        General::deleteApi($job, 1, $key);
     }
 
-    public function accountEdit($data, $dataID)
+    public function accountEdit($data, $dataID, $key)
     {
         /*
         $data = array()
@@ -44,7 +44,7 @@ class Company extends General
           "Website": "www.landstede.nl"
         );
         */
-        General::putApi($data, "/api/Company/".$dataID);
+        General::putApi($data, "/api/Company/".$dataID, 1, $key);
     }
 }
 

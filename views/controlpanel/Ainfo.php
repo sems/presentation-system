@@ -1,4 +1,4 @@
 <?php require_once 'menu.php'; ?>
 <div class="c_container">
-  <p>account gegevens</p>
+  <h3>Account gegevens</h3>
 </div>
