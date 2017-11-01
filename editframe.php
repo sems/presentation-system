@@ -31,7 +31,7 @@
             $_SESSION['msg'] = "frame aangepast";
 
             //echo $message;
-            header('location: presentation.php');
+            header('location: frames.php');
 
         } else {
             $_SESSION['msg'] = "er is geen POST";
@@ -39,7 +39,7 @@
         }
     } else {
         $_SESSION['msg'] = "er is geen POST";
-        header("Location: presentation.php");
+        header("Location: frames.php");
     }
 
 

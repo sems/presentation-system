@@ -22,13 +22,13 @@
         //Dump your POST variables
         $_SESSION['msg'] = $message;
         //echo $message;
-        header('location: presentation.php');
+        header('location: frames.php');
     } else {
         $message = "Er is geen POST. Neem contact op met uw site adminstrator";
         //Dump your POST variables
         $_SESSION['msg'] = $message;
         //echo $message;
-        header('location: presentation.php');
+        header('location: frames.php');
     }
 
 

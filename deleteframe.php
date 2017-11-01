@@ -11,11 +11,11 @@
             $message = "Frame is succesvol verwijderd.";
             //Dump your POST variables
             $_SESSION['msg'] = $message;
-            header('location: presentation.php');
+            header('location: frames.php');
         } else {
             $message = "Verwijderen is gestopt door gebruiker.";
             $_SESSION['msg'] = $message;
-            header('location: presentation.php');
+            header('location: frames.php');
         }
     }
 
