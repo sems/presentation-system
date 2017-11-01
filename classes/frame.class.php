@@ -18,7 +18,6 @@ class Frame extends General
         /*
             $data = array(
                 'Title' => $_POST['title'],
-                'orderIndex' => $_POST['orderIndex'],
                 'duration' => $_POST['duration'],
                 'media' => $_POST['media'],
                 'text' => $_POST['text']
@@ -33,6 +32,28 @@ class Frame extends General
         // Call with General::deleteID("3");
         $job = "/api/Frame/".$dataId;
         General::deleteApi($job, 1, $key);
+    }
+
+    public function frameEdit($data, $dataID, $key)
+    {
+        /*
+        $data = array(
+            'id' => '2',
+            'Title'=>'wow',
+            'duration'=>'32',
+            'media'=>'www.evv',
+            'text'=>'tewvwevwel grgwvwe'
+        );
+        */
+        $editResponse = General::putApi($data, "/api/Frame/".$dataID, 1, $key);
+        return $editResponse;
+    }
+
+    public function frameGet($dataID, $key)
+    {
+        // accountGet(1, 1, $key)
+        $getFrame = General::getApi("/api/frame/".$dataID, 1, $key);
+        return $getFrame;
     }
 }
 

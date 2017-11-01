@@ -5,14 +5,12 @@
         if(empty($_POST['media'])) {
             $data = array(
                 'Title' => $_POST['title'],
-                'orderIndex' => $_POST['orderIndex'],
                 'duration' => $_POST['duration'],
                 'text' => $_POST['text']
             );
         } else {
             $data = array(
                 'Title' => $_POST['title'],
-                'orderIndex' => $_POST['orderIndex'],
                 'duration' => $_POST['duration'],
                 'media' => $_POST['media'],
                 'text' => $_POST['text']

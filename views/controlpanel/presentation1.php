@@ -1,6 +1,6 @@
 <?php
     require_once 'menu.php';
-    require_once "classes/frame.class.php";
+    require_once "classes/presentation.class.php";
 ?>
 <div class="c_container">
     <?php
@@ -24,7 +24,7 @@
             <th>Verwijderen</th>
         </tr>
         <?php
-            $r = Frame::getFrames();
+            $r = Presentation::getPresentation();
 
             $search_results = json_decode($r, true);
             if ($search_results === NULL) die('Error parsing json');
@@ -33,7 +33,7 @@
             foreach ($search_results as $data) {
 
                 $id = $data["id"];
-                $order = $data["orderIndex"];
+                $order = $data["name"];
                 $duration = $data["duration"];
                 $title = $data["title"];
                 $media = $data["media"];
