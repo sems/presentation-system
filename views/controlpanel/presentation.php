@@ -93,47 +93,47 @@
         <input required name="name" type='text' id="title"/>
       </div>
       <div class='field'>
-        <label for="duration">CompanyId<span class="required">*</span></label>
+        <label for="frame_">CompanyId<span class="required">*</span></label>
         <input required name="company_id" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 1<span class="required">*</span></label>
+        <label for="frame_1">Frame 1<span class="required">*</span></label>
         <input required name="frame_1" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 2</label>
+        <label for="frame_2">Frame 2</label>
         <input required name="frame_2" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 3</label>
+        <label for="frame_3">Frame 3</label>
         <input required name="frame_3" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 4</label>
+        <label for="frame_4">Frame 4</label>
         <input required name="frame_4" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 5</label>
+        <label for="frame_5">Frame 5</label>
         <input required name="frame_5" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 6</label>
+        <label for="frame_6">Frame 6</label>
         <input required name="frame_6" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 7</label>
+        <label for="frame_7">Frame 7</label>
         <input required name="frame_7" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 8</label>
+        <label for="frame_8">Frame 8</label>
         <input required name="frame_9" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 9</label>
+        <label for="frame_9">Frame 9</label>
         <input required name="frame_9" type='text' />
       </div>
       <div class='field'>
-        <label for="duration">Frame 10</label>
+        <label for="frame_10">Frame 10</label>
         <input required name="frame_10" type='text' />
       </div>
       <div class='field'>
@@ -146,7 +146,7 @@
 <div class='del-modal'>
     <header>Verwijderen</header>
     <div class='content'>
-        <form action="deleteframe.php" method="POST">
+        <form action="deletePresentation.php" method="POST">
             <p>Weet u zeker dat u dit scherm wil verwijderen.</p>
 
             <input class="in-awnser" name="idtodel" type="hidden" value="">
@@ -163,55 +163,57 @@
 <div class='edit-modal'>
     <header>Bijwerking</header>
     <div class='content'>
+
         <form action="editpresentation.php" method="POST">
-          <div class='field'>
-            <label for="title">Titel<span class="required">*</span></label>
-            <input required name="name" type='text' id="title"/>
-          </div>
-          <div class='field'>
-            <label for="duration">CompanyId<span class="required">*</span></label>
-            <input required name="company_id" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 1<span class="required">*</span></label>
-            <input required name="frame_1" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 2</label>
-            <input required name="frame_2" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 3</label>
-            <input required name="frame_3" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 4</label>
-            <input required name="frame_4" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 5</label>
-            <input required name="frame_5" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 6</label>
-            <input required name="frame_6" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 7</label>
-            <input required name="frame_7" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 8</label>
-            <input required name="frame_9" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 9</label>
-            <input required name="frame_9" type='text' />
-          </div>
-          <div class='field'>
-            <label for="duration">Frame 10</label>
-            <input required name="frame_10" type='text' />
-          </div>
+            <input class="in-awnser" name="idtoedit" type="hidden" value="">
+              <div class='field'>
+                <label for="title">Titel<span class="required">*</span></label>
+                <input required name="e_name" type='text' id="title"/>
+              </div>
+              <div class='field'>
+                <label for="frame_">CompanyId<span class="required">*</span></label>
+                <input required name="e_company_id" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_1">Frame 1<span class="required">*</span></label>
+                <input required name="e_frame_1" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_2">Frame 2<span class="required">*</span></label>
+                <input required name="e_frame_2" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_3">Frame 3</label>
+                <input name="e_frame_3" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_4">Frame 4</label>
+                <input name="e_frame_4" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_5">Frame 5</label>
+                <input name="e_frame_5" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_6">Frame 6</label>
+                <input name="e_frame_6" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_7">Frame 7</label>
+                <input name="e_frame_7" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_8">Frame 8</label>
+                <input name="e_frame_8" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_9">Frame 9</label>
+                <input name="e_frame_9" type='text' />
+              </div>
+              <div class='field'>
+                <label for="frame_10">Frame 10</label>
+                <input name="e_frame_10" type='text' />
+              </div>
 
           <div class='field'>
 				    <input name="b_edit_submit" type='submit' class='btn btn-primary' value="Bijwerken" />
