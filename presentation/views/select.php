@@ -4,10 +4,10 @@
 ?>
 <div class="container">
 		<div class="selected-item">
-			<p>Select Presentation :</p>
+			<p>Select Presentation </p>
 		</div>
-
-		<select name="" id="cusSelectbox">
+  <form class="pres_start" action="index.html" method="post">
+    <select name="" id="cusSelectbox">
 			<option value="Select">Select</option>
 			<?php
 					$key = $_SESSION['key'];
@@ -25,6 +25,12 @@
 
 			?>
 		</select>
+    <div class="cusSubmit">
+      <button class="btn" type="submit" name="id" value="" >Presentatie starten</button>
+    </div>
+
+  </form>
+
 
 
 	</div>

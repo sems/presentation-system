@@ -66,7 +66,7 @@
 <div class="pre-add-modal">
   <header>Aanmaken</header>
   <div class="content">
-    <form action="createframe.php" method="post">
+    <form action="createframe.php" method="post" enctype="multipart/form-data">
       <p>Frame aanmaken</p>
       <div class='field'>
         <label for="title">Titel<span class="required">*</span></label>
@@ -77,8 +77,8 @@
         <input required name="duration" type='text' />
       </div>
       <div class='field'>
-        <label for="media">Video of afbeelding (url) </label>
-        <input name="media" type='text' />
+        <label for="afbeelding">Video of afbeelding (url) </label>
+        <input type="file" name="afbeelding" />
       </div>
       <div class='field'>
         <label for="text">Omschrijving<span class="required">*</span></label>

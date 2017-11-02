@@ -53,8 +53,8 @@ body
   display: inline-block
   position: relative
   -webkit-perspective: 800px
-          perspective: 800px
-
+  perspective: 800px
+  margin-bottom: 64px
 .selectLabel
   position: absolute
   left: 0
@@ -184,3 +184,39 @@ body
 
     &:nth-child(6)
       z-index: 1
+.pres_start
+
+  .cusSubmit
+
+    display: inline-block
+    position: relative
+    -webkit-perspective: 800px
+    -webkit-perspective-perspective: 800px
+    height: 50px
+    min-width: 250px
+    z-index: -1
+    .btn
+      font-family: "Roboto", arial, sans-serif
+      font-size: 16px
+      background-color: rgb(255,255,255)
+      border: 1px solid #333
+      cursor: pointer
+      display: block
+      line-height: 50px
+      list-style: none
+      opacity: 1
+      padding: 0 50px 0 20px
+
+      -webkit-transition: -webkit-transform 600ms ease
+      transition: -webkit-transform 600ms ease
+      transition: transform 600ms ease
+      transition: transform 600ms ease, -webkit-transform 300ms ease
+
+      height: 50px
+      width: 100%
+      &:hover
+        background-color: #555
+        color: #fff
+      &:active, &:focus
+        background-color: #333
+        color: #fff
