@@ -42,8 +42,8 @@
                   imagePNG($gd, $doel);
 
                   // Return
-                  $message = "Frame is succesvol aangemaakt<br/>";
-                  $message .= "Bestand is geüpload als ".$bestand;
+                  $message = "Frame is succesvol aangemaakt, met afbeelding <br/>";
+                  //$message .= "Bestand is geüpload als ".$bestand;
 
                   // afbeelding weer sluiten
                   imageDestroy($gd);
@@ -59,7 +59,7 @@
             $data = array(
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
-                'media' => $doel,
+                'media' => $bestand,
                 'text' => $_POST['text']
             );
         }
