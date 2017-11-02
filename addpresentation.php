@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'frame5' => $_POST['frame_5'],
         'frame6' => $_POST['frame_6'],
         'frame7' => $_POST['frame_7'],
-        'frame8' => "5",
+        'frame8' => $_POST['frame_7'],
         'frame9' => $_POST['frame_9'],
         'frame10' => $_POST['frame_10']
     );
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Dump your POST variables
     $_SESSION['msg'] = $message;
     //echo $message;
-    //header('location: presentation.php');
+    header('location: presentation.php');
 } else {
     $message = "Er is geen POST. Neem contact op met uw site adminstrator";
     //Dump your POST variables
