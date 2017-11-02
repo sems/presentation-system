@@ -3,7 +3,6 @@ require_once $_SERVER['DOCUMENT_ROOT']."/presentatiesysteem/classes/general.clas
 /**
  *
  */
- echo $_SERVER['DOCUMENT_ROOT']."/presentatiesysteem/classes/general.class.php";
 class Presentation extends General
 {
     public function createPresentation($data, $key) {
