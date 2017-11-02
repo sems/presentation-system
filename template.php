@@ -26,7 +26,7 @@
                         if($sectionActive == 'Controlpanel') {
                             echo ' active';
                         }
-                        echo "'><a href='controlpanel.php'>CP</a></li>";
+                        echo "'><a href='accountdetails.php'>CP</a></li>";
 
                         echo "<li class='nav-items'><a href='logout.php'>Logout</a></li>";
                     };
