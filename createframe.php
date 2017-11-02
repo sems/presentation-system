@@ -13,6 +13,7 @@
                 'duration' => $_POST['duration'],
                 'text' => $_POST['text']
             );
+            $message = "Het frame is goed toegevoegd.";
         } else {
             $afbeelding = $_FILES["afbeelding"];
             if(isSet($afbeelding) && $afbeelding["error"] === 0) {
@@ -40,30 +41,31 @@
                   // afbeelding opslaan
                   imagePNG($gd, $doel);
 
-
+                  // Return
                   $message = "Frame is succesvol aangemaakt<br/>";
                   $message .= "Bestand is geüpload als ".$bestand;
-                  //Dump your POST variables
-                  $_SESSION['msg'] = $message;
+
                   // afbeelding weer sluiten
                   imageDestroy($gd);
 
                   // tijdelijke upload verwijderen, die hebben we niet meer nodig.
                   unlink($file);
                 } else {
-                    $bericht = "Bestand is niet in een juist format, probeer PNG, JPEG, BMP of GIF.";
+                    $message = "Bestand is niet in een juist format, probeer PNG, JPEG, BMP of GIF.";
                 }
             } else {
-                $bericht = "Bestand niet juist geüpload, het bestand moet kleiner zijn dan 2MiB";
+                $message = "Bestand niet juist geüpload, het bestand moet kleiner zijn dan 2MiB";
             }
             $data = array(
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
-                'media' => $bestand,
+                'media' => $doel,
                 'text' => $_POST['text']
             );
         }
 
+        //Dump your POST variables
+        $_SESSION['msg'] = $message;
         // Adding with the api
         $token = $_SESSION['key'];
         $r = Frame::frameCreate($data, $token);
