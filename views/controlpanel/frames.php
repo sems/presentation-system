@@ -11,7 +11,7 @@
         //Unset the useless session variable
         unset($_SESSION['msg']);
     }?>
-    <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
+    <button type="button" class="btn-add btn" name="button">Frame aanmaken</button>
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
@@ -57,13 +57,13 @@
 
         ?>
     </table>
-    <button type="button" class="btn-pre-add btn-primary btn" name="button">Frame aanmaken</button>
+    <button type="button" class="btn-add btn" name="button">Frame aanmaken</button>
 </div>
 
 
 
 
-<div class="pre-add-modal">
+<div class="add-modal">
   <header>Aanmaken</header>
   <div class="content">
     <form action="createframe.php" method="post" enctype="multipart/form-data">
