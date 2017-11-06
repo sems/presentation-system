@@ -34,8 +34,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $l_response = Account::accountLogin($l_data);
         $l_response = json_decode($l_response);
         $token = $l_response->data->token;
+        //$userid = $l_response->data->id;
         if($l_response->error == false) {
             $_SESSION['key'] = "Bearer " .$token;
+            //$_SESSION['userid'] = $userid;
             $_SESSION['logged_in'] = true;
 
             $message = $l_response->message;

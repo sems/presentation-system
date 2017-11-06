@@ -7,11 +7,12 @@
     if(isSet($_SESSION['msg'])){
         //Access your POST variables
         $temp = $_SESSION['msg'];
-        echo $temp."<br/>";
+        ?>
+        <div class="alert"><?php  echo $temp; ?></div>
+        <?php
         //Unset the useless session variable
         unset($_SESSION['msg']);
-    }
-    ?>
+    }?>
     <button class="btn btn-add" type="submit" name="add">Toevoegen</button>
     <table class="user-table" method="get">
         <tr>
