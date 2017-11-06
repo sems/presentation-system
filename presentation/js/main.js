@@ -1,10 +1,10 @@
-$(function () {
+$(document).ready(function(){
 
 	var defaultselectbox = $('#cusSelectbox');
 	var numOfOptions = $('#cusSelectbox').children('option').length;
 
 	// hide select tag
-	defaultselectbox.addClass('s-hidden');
+	//defaultselectbox.addClass('s-hidden');
 
 	// wrapping default selectbox into custom select block
 	defaultselectbox.wrap('<div class="cusSelBlock"></div>');
@@ -56,6 +56,18 @@ $(function () {
 		}
 	});
 
+	$('.options li').click(function () {
+		$('.options li').removeClass("selected");
+		$(this).addClass('selected');
+		if( $(this).hasClass('selected') ) {
+			var index = $(this).attr("rel");
+			index = parseInt(index);
+			$("#selectedItem").val(index);
+			// $("#cusSelectbox option").attr("selected", false);
+			// $("#cusSelectbox option[value="+ index +"]").attr("selected", true);
+		}
+	});
+
 	$(".options li").on('keypress click', function(e) {
 		e.preventDefault();
 		$('.options li').siblings().removeClass();
@@ -65,7 +77,6 @@ $(function () {
 		defaultselectbox.val($(this).text());
 		$('.selected-item p span').text($('.selectLabel').text());
 	});
-
 });
 
 function focusItems() {

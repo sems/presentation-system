@@ -47,7 +47,7 @@
                         echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
                     echo "</td>";
                     echo "<td>";
-                        echo '<button class="btn btn-primary" type="submit" name="edit" value="'.$id.'" >Preview</button>';
+                        echo '<a class="btn btn-primary" href="previewframe.php?id='.$id.'">Preview</a>';
                     echo "</td>";
                     echo "<td>";
                         echo '<button class="btn btn-primary btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';

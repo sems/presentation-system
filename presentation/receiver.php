@@ -2,16 +2,11 @@
     require_once "inc/package.inc.php";
     require('inc/config.php');
 
-    $view = "views/viewpost.php";
+    $view = "views/select.php";
 
-    try {
-        $stmt = $db->prepare('SELECT * FROM portfolio WHERE id = :id');
-        $stmt->execute(array(':id' => $_GET['id']));
-        $row = $stmt->fetch();
-    } catch(PDOException $e) {
-        //Gives the error message if possible.
-         echo "Error: " . $e->getMessage();
-    };
+    $viewId = $_GET['id'];
+
+    
 
 
     //if post does not exists redirect user.

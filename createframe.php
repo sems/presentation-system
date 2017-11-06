@@ -26,7 +26,7 @@
                 $gd   = @imageCreateFromString($data); // de @ onderdrukt waarschuwingen
                 if($gd) {
                   // nieuw formaat berekenen!
-                  $nieuweAfbeelding = scaleImage($gd, 500, 500); // maximaal 500x500 pixels!!
+                  $nieuweAfbeelding = scaleImage($gd, 1024, 1024); // maximaal 1024x1024 pixels!!
                   if($nieuweAfbeelding) {
                       imageDestroy($gd); // het origineel sluiten en verder werken met de geschaalde afbeelding
                       $gd = $nieuweAfbeelding;
