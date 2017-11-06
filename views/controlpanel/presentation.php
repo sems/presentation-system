@@ -27,6 +27,9 @@
             <th>Frame 8</th>
             <th>Frame 9</th>
             <th>Frame 10</th>
+            <th>Bewerken</th>
+            <th>Preview</th>
+            <th>Verwijderen</th>
         </tr>
         <?php
             $key = $_SESSION['key'];
@@ -68,6 +71,9 @@
 
                     echo "<td>";
                         echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
+                    echo "</td>";
+                    echo "<td>";
+                        echo '<button class="btn btn-primary btn-pre" type="submit" name="id" value="'.$id.'" >Preview</button>';
                     echo "</td>";
                     echo "<td>";
                         echo '<button class="btn btn-primary btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
