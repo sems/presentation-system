@@ -23,7 +23,7 @@ class Frame extends General
                 'text' => $_POST['text']
             );
         */
-        $fCreate = General::postApi($data, "/api/frame/Create", 1);
+        $fCreate = General::postApi($data, "/api/frame/Create", 1, $key);
         return $fCreate;
     }
 

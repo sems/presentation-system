@@ -19,7 +19,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['b_password'] == $_POST['b_repeat_password']) {
         if(intval($responseKeys["success"]) !== 1) {
             // No succes with the ReCaptcha
-            $rError = "De captcha was incorrect of niet ingevuld!";
+            $message = "De captcha was incorrect of niet ingevuld!";
+            //Dump your POST variables
+            $_SESSION['msg'] = $message;
             header('Location: prices.php');
         } else {
             $uData = array(
@@ -29,6 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             );
             // If success with the ReCaptcha
             $aCreate = Account::accountCreate($uData);
+            $aCreate = json_decode($aCreate);
+            $a = $aCreate->data->id;
+            //print_r($a);
 
             // Put the Company data in an array
             $cData = array(
@@ -40,38 +45,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 "Website" => $_POST['c_site']
             );
             $cCreate = Company::companyCreate($cData);
+            $cCreate = json_decode($cCreate);
+            $c = $cCreate->data->id;
+            //print_r($c);
 
-
-            $aObj = json_decode($aCreate);
-            $aCreateId =  $aObj->id;
-
-            $cObj = json_decode($cCreate);
-            $cCreateId =  $cObj->id;
-
-
-            if ( is_numeric($aCreateId) && is_numeric($cCreateId) ) {
+            if ( is_numeric($c) && is_numeric($a) ) {
                 $data = array(
-                    'AccountId' => $aCreateId,
-                    'CompanyId' => $cCreateId,
+                    'AccountId' => $a,
+                    'CompanyId' => $c,
                 );
                 CompanyAccount::linkCreate($data);
             }
 
+            if ($a == "" || $a == " ") {
+                // It will never end in this if good
+                exit;
+            }
+            if ($c == "" || $c == " ") {
+                // It will never end in this if good
+                exit;
+            }
 
-            if ($aCreateId == "" || $aCreateId == " ") {
-                // It will never end in this if good
-                exit;
-            }
-            if ($cCreateId == "" || $cCreateId == " ") {
-                // It will never end in this if good
-                exit;
-            }
+            $message = "Het account is goed aangemaakt.";
+            //Dump your POST variables
+            $_SESSION['msg'] = $message;
+            header('Location: login.php');
         }
     } else {
-        $rError = "De ingevulde wachtwoorden komen niet overeen!";
+        $message = "De ingevulde wachtwoorden komen niet overeen!";
+        $_SESSION['msg'] = $message;
         header('Location: prices.php');
     }
-
-
     // End ReCaptcha
+} else {
+  $message = "Er is geen POST neem contact op met de systeem administrator!";
+  $_SESSION['msg'] = $message;
 }

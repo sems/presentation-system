@@ -5,16 +5,19 @@
     session_start();
 
     if(isset($_POST['createframe'])) {
-        //: Het posten van een frame
-        if(empty($_FILES['afbeelding'])) {
+
+        if( !is_uploaded_file($_FILES['afbeelding']['tmp_name']) ) {
+          echo "BEN JE HIER";
             //: Er is geen img gepost.
             $data = array(
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
+                'media' => NULL,
                 'text' => $_POST['text']
             );
             $message = "Het frame is goed toegevoegd.";
         } else {
+          echo "of hier";
             $afbeelding = $_FILES["afbeelding"];
             if(isSet($afbeelding) && $afbeelding["error"] === 0) {
                 // alles ging goed
@@ -34,10 +37,10 @@
 
                   // nieuwe bestandsnaam bepalen, deze moet uniek zijn.
                   $bestand = "image_".time().sha1_file($file).".png";
-                  echo $bestand."<br/>";
+                  //echo $bestand."<br/>";
                   // doelmap bepalen
                   $doel = realPath("img/uploads").DIRECTORY_SEPARATOR.$bestand;
-                  echo $doel;
+                  //echo $doel;
                   // afbeelding opslaan
                   imagePNG($gd, $doel);
 
@@ -50,18 +53,19 @@
 
                   // tijdelijke upload verwijderen, die hebben we niet meer nodig.
                   unlink($file);
+
+                  $data = array(
+                      'Title' => $_POST['title'],
+                      'duration' => $_POST['duration'],
+                      'media' => $bestand,
+                      'text' => $_POST['text']
+                  );
                 } else {
                     $message = "Bestand is niet in een juist format, probeer PNG, JPEG, BMP of GIF.";
                 }
             } else {
                 $message = "Bestand niet juist geüpload, het bestand moet kleiner zijn dan 2MiB";
             }
-            $data = array(
-                'Title' => $_POST['title'],
-                'duration' => $_POST['duration'],
-                'media' => $bestand,
-                'text' => $_POST['text']
-            );
         }
 
         //Dump your POST variables
@@ -69,8 +73,8 @@
         // Adding with the api
         $token = $_SESSION['key'];
         $r = Frame::frameCreate($data, $token);
-        //echo $message;
-        header( 'location: frames.php');
+        echo $r;
+        //header( 'location: frames.php');
     } else {
         $message = "Er is geen POST. Neem contact op met uw site adminstrator";
         //Dump your POST variables

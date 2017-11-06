@@ -20,34 +20,38 @@ require_once "classes/account.class.php";
             <th>Verwijderen</th>
         </tr>
         <?php
-            $r = Account::getUsers();
+            $key = $_SESSION['key'];
+            $r = Account::getUsers($key);
 
             $search_results = json_decode($r, true);
             if ($search_results === NULL) die('Error parsing json');
-            //print_r($search_results);
+            $results = $search_results["data"];
 
-            foreach ($search_results as $data) {
-
-                $id = $data["id"];
-                $name = $data["name"];
-                $email = $data["email"];
-                echo "<tr>";
-                    echo '<td>'.$id.'</td>';
-                    echo '<td>'.$name.'</td>';
-                    echo '<td>'.$email.'</td>';
-                    echo "<td>";
-                        echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
-                    echo "</td>";
-                    echo "<td>";
-                        echo '<button class="btn btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
-                    echo "</td>";
-                echo "</tr>";
+            if (empty($results) ) {
+              $message = "Er zijn geen gebruiker gevonden voor u bedrijf.";
+              //Dump your POST variables
+              $_SESSION['msg'] = $message;
+              exit();
+            } else {
+              foreach ($results as $data) {
+                  $id = $data["id"];
+                  $name = $data["name"];
+                  $email = $data["email"];
+                  echo "<tr>";
+                      echo '<td>'.$id.'</td>';
+                      echo '<td>'.$name.'</td>';
+                      echo '<td>'.$email.'</td>';
+                      echo "<td>";
+                          echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
+                      echo "</td>";
+                      echo "<td>";
+                          echo '<button class="btn btn-del" type="submit" name="id" value="'.$id.'" >Verwijderen</button>';
+                      echo "</td>";
+                  echo "</tr>";
+              }
             }
-
         ?>
     </table>
-
-
 </div>
 <div class='del-modal'>
     <header>Verwijderen</header>

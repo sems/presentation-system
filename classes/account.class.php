@@ -58,8 +58,8 @@ class Account extends General
         return $getAccount;
     }
 
-    public function getUsers() {
-        $response = General::getApi("/api/Account", 0);
+    public function getUsers($key) {
+        $response = General::getApi("/api/Account", 1, $key);
         return $response;
     }
 }
