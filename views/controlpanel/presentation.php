@@ -126,7 +126,7 @@
       </div>
       <div class='field'>
         <label for="frame_8">Frame 8</label>
-        <input required name="frame_9" type='text' />
+        <input required name="frame_8" type='text' />
       </div>
       <div class='field'>
         <label for="frame_9">Frame 9</label>
