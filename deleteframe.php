@@ -14,9 +14,15 @@
             header('location: frames.php');
         } else {
             $message = "Verwijderen is gestopt door gebruiker.";
-            $_SESSION['msg'] = $message;
+            $_SESSION['dngr_msg'] = $message;
             header('location: frames.php');
         }
+    } else {
+        $message = "Er is geen POST. Neem contact op met uw site adminstrator";
+        //Dump your POST variables
+        $_SESSION['dngr_msg'] = $message;
+        //echo $message;
+        header('location: controlscreens.php');
     }
 
 

@@ -14,7 +14,7 @@
             header('location: controlscreens.php');
         } else {
             $message = "Verwijderen is gestopt door gebruiker.";
-            $_SESSION['msg'] = $message;
+            $_SESSION['dngr_msg'] = $message;
             header('location: controlscreens.php');
         }
     }

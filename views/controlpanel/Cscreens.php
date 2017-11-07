@@ -3,16 +3,7 @@
     require_once "classes/receiver.class.php";
 ?>
 <div class="c_container">
-    <?php
-    if(isSet($_SESSION['msg'])){
-        //Access your POST variables
-        $temp = $_SESSION['msg'];
-        ?>
-        <div class="alert"><?php  echo $temp; ?></div>
-        <?php
-        //Unset the useless session variable
-        unset($_SESSION['msg']);
-    }?>
+    <?php include 'inc/error.php'; ?>
     <button class="btn btn-add" type="submit" name="add">Toevoegen</button>
     <table class="user-table" method="get">
         <tr>
