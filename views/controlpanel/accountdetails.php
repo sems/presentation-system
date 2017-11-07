@@ -19,7 +19,10 @@ require_once "classes/account.class.php";
             exit();
         } else {
             //print_r($results) ;
-            print_r($results[0]);
+            $o = $results[0];
+            $name = $o["name"];
+            $id = $o["id"];
         }
     ?>
+    <p>Welkom <span class="currentusr"><?php echo $name; ?></span></p>
 </div>
