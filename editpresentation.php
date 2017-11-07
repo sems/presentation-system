@@ -24,9 +24,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($data as $key => $value) {
         $value = trim($value);
         if (empty($value)) {
-            $data[$key] = "0";
+            $data[$key] = 0;
         }
     }
+    var_dump($data);
+    die();
     // If success with the ReCaptcha
     $aEdit = Presentation::editPresentation($data,$idToEdit,$key);
 	$aEdit = json_decode($aEdit);

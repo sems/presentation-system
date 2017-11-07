@@ -3,18 +3,8 @@
     require_once "classes/presentation.class.php";
 ?>
 <div class="c_container">
-    <?php
-    if(isSet($_SESSION['msg'])){
-        //Access your POST variables
-        $temp = $_SESSION['msg'];
-        ?>
-        <div class="alert">
-            <?php  echo $temp; ?>
-        </div>
-        <?php
-        //Unset the useless session variable
-        unset($_SESSION['msg']);
-    }?>
+    <?php include 'inc/error.php'; ?>
+</div>
     <button type="button" class="btn-add btn" name="button">Presentatie aanmaken</button>
     <table class="user-table" method="get">
         <tr>
