@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'frame9' => $_POST['e_frame_9'],
         'frame10' => $_POST['e_frame_10']
     );
-    // checks if a $_POST is empty and puts string containing NULL
+    // checks if a $_POST is empty and puts int containing NULL
     foreach ($data as $key => $value) {
         $value = trim($value);
         if (empty($value)) {
@@ -28,7 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     var_dump($data);
-    die();
     // If success with the ReCaptcha
     $aEdit = Presentation::editPresentation($data,$idToEdit,$key);
 	$aEdit = json_decode($aEdit);

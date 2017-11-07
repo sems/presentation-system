@@ -4,7 +4,6 @@
 ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
-</div>
     <button type="button" class="btn-add btn" name="button">Presentatie aanmaken</button>
     <table class="user-table" method="get">
         <tr>
