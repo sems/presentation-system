@@ -3,18 +3,7 @@
     require_once "classes/frame.class.php";
 ?>
 <div class="c_container">
-    <?php
-    if(isSet($_SESSION['msg'])){
-        //Access your POST variables
-        $temp = $_SESSION['msg'];
-        ?>
-        <div class="alert">
-            <?php  echo $temp; ?>
-        </div>
-        <?php
-        //Unset the useless session variable
-        unset($_SESSION['msg']);
-    }?>
+    <?php include 'inc/error.php'; ?>
     <button type="button" class="btn-add btn" name="button">Frame aanmaken</button>
     <table class="user-table" method="get">
         <tr>

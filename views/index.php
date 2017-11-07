@@ -5,8 +5,6 @@
         //Access your POST variables
         $key = $_SESSION['key'];
         echo $key."<br/>";
-    }else {
-        echo "Er is geen token";
     }
     ?>
 </div>
