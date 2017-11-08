@@ -31,7 +31,7 @@ class Company extends General
         General::deleteApi($job, 1, $key);
     }
 
-    public function accountEdit($data, $dataID, $key)
+    public function companyEdit($data, $dataID, $key)
     {
         /*
         $data = array()
