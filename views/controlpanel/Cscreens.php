@@ -8,7 +8,7 @@
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
-            <th>Gebruikers Id</th>
+            <th>Bedrijfs id</th>
             <th>Naam</th>
             <th>Actief</th>
             <th>Bewerken</th>
@@ -57,7 +57,7 @@
         <form action="addscreen.php" method="POST">
 
             <div class='field'>
-				<label >Gebruikers ID<span class="required">*</span></label>
+				<label >Bedrijfs id<span class="required">*</span></label>
 				<input required name="add_screen_user_id" type='text' />
 			</div>
 			<div class='field'>
