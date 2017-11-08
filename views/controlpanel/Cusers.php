@@ -63,7 +63,6 @@ require_once "classes/account.class.php";
 
     </div>
 </div>
-
 <div class='edit-modal'>
     <header>Bijwerking</header>
     <div class='content'>
