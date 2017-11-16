@@ -3,22 +3,24 @@
 
   //if post does not exists redirect user.
   if($_GET['id'] == ''){
-    header('Location: ./');
+    header('Location: controlpanel');
     exit;
   }
 
   $key = $_SESSION['key'];
   $viewId = $_GET['id'];
+  echo $viewIds;
   $r = Frame::frameGet($viewId, $key);
 
-  $search_results = json_decode($r);
+  $search_results = json_decode($r, true);
   if ($search_results === NULL) die('Error parsing json');
-  //print_r($search_results);
+  print_r($search_results);
 
 
-  $media = "http://presentatiesysteem-2017-2018.saldev.nl/img/uploads/".$search_results->media;
-  $title = $search_results->title;
-  $text = $search_results->text;
+  $media = "http://presentatiesysteem-2017-2018.saldev.nl/img/uploads/".$search_results['media'];
+  echo $media;
+  $title = $search_results["title"];
+  $text = $search_results['text'];
 
 ?>
 <div class="container_preview">
