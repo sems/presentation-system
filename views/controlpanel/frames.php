@@ -71,7 +71,7 @@
       </div>
       <div class='field'>
         <label for="afbeelding">Video of afbeelding. Vul er maar een in. <span class="required">Niet meer als een!</span></label>
-        <input name="img_link" type='text' placeholder="Directe link naar afbeelding"/>
+        <input name="img_link" type='text' placeholder="http://0xd.nl/troll.png"/>
         <input name="yt_link" type='text' placeholder="https://www.youtube.com/watch?v=W0ay1F3mhOE"/>
         <input type="file" name="afbeelding" />
       </div>
