@@ -33,7 +33,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         );
         $l_response = Account::accountLogin($l_data);
         $l_response = json_decode($l_response);
-        $token = $l_response->data->token;
+        $token = $l_response->data[0]->token;
+
         //$userid = $l_response->data->id;
         if($l_response->error == false) {
             $_SESSION['key'] = "Bearer " .$token;
