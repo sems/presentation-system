@@ -1,6 +1,7 @@
 <?php
     require_once 'menu.php';
     require_once "classes/presentation.class.php";
+    require_once "classes/frame.class.php";
 ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
@@ -85,7 +86,7 @@
 <div class="add-modal">
   <header>Aanmaken</header>
   <div class="content">
-    <form action="addpresentation.php" method="post">
+    <form action="addpresentation.php" method="POST">
       <p>Frame aanmaken</p>
       <div class='field'>
         <label for="title">Titel<span class="required">*</span></label>
@@ -97,43 +98,153 @@
       </div>
       <div class='field'>
         <label for="frame_1">Frame 1<span class="required">*</span></label>
-        <input required name="frame_1" type='text' />
+        <select name="frame_1">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_2">Frame 2</label>
-        <input required name="frame_2" type='text' />
+        <select name="frame_2">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_3">Frame 3</label>
-        <input required name="frame_3" type='text' />
+        <select name="frame_3">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_4">Frame 4</label>
-        <input required name="frame_4" type='text' />
+        <select name="frame_4">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_5">Frame 5</label>
-        <input required name="frame_5" type='text' />
+        <select name="frame_5">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_6">Frame 6</label>
-        <input required name="frame_6" type='text' />
+        <select name="frame_6">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_7">Frame 7</label>
-        <input required name="frame_7" type='text' />
+        <select name="frame_7">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_8">Frame 8</label>
-        <input required name="frame_8" type='text' />
+        <select name="frame_8">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_9">Frame 9</label>
-        <input required name="frame_9" type='text' />
+        <select name="frame_9">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <label for="frame_10">Frame 10</label>
-        <input required name="frame_10" type='text' />
+        <select name="frame_10">
+            <option disabled selected value="0">kies frame</option>
+            <option value="0">geen frame</option>
+            <?php
+            $response = Frame::getFrames();
+            $r = json_decode($response, true);
+            if ($r === NULL) die('Error parsing json');
+            foreach($r as $value) {
+            ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+            }
+             ?>
+        </select>
       </div>
       <div class='field'>
         <input type='submit' name="createpresentation" class='btn btn-primary' value="Aanmaken" />
@@ -175,43 +286,153 @@
               </div>
               <div class='field'>
                 <label for="frame_1">Frame 1<span class="required">*</span></label>
-                <input required name="e_frame_1" type='text' />
+                <select name="e_frame_1">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_2">Frame 2<span class="required">*</span></label>
-                <input required name="e_frame_2" type='text' />
+                <select name="e_frame_2">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_3">Frame 3</label>
-                <input name="e_frame_3" type='text' />
+                <select name="e_frame_3">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_4">Frame 4</label>
-                <input name="e_frame_4" type='text' />
+                <select name="e_frame_4">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_5">Frame 5</label>
-                <input name="e_frame_5" type='text' />
+                <select name="e_frame_5">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_6">Frame 6</label>
-                <input name="e_frame_6" type='text' />
+                <select name="e_frame_6">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_7">Frame 7</label>
-                <input name="e_frame_7" type='text' />
+                <select name="e_frame_7">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_8">Frame 8</label>
-                <input name="e_frame_8" type='text' />
+                <select name="e_frame_8">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_9">Frame 9</label>
-                <input name="e_frame_9" type='text' />
+                <select name="e_frame_9">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
               <div class='field'>
                 <label for="frame_10">Frame 10</label>
-                <input name="e_frame_10" type='text' />
+                <select name="e_frame_10">
+                    <option disabled selected value="0">kies frame</option>
+                    <option value="0">geen frame</option>
+                    <?php
+                    $response = Frame::getFrames();
+                    $r = json_decode($response, true);
+                    if ($r === NULL) die('Error parsing json');
+                    foreach($r as $value) {
+                    ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
+                    }
+                     ?>
+                </select>
               </div>
 
           <div class='field'>
