@@ -6,8 +6,10 @@
 
     if(isset($_POST['createframe'])) {
 
-        if( !is_uploaded_file($_FILES['afbeelding']['tmp_name']) ) {
-          echo "BEN JE HIER";
+        $imgLink = $_POST["img_link"];
+        $ytLink = $_POST["yt_link"];
+
+        if( !is_uploaded_file($_FILES['afbeelding']['tmp_name']) && empty($imgLink) && empty($ytLink) ) {
             //: Er is geen img gepost.
             $data = array(
                 'Title' => $_POST['title'],
@@ -16,8 +18,37 @@
                 'text' => $_POST['text']
             );
             $message = "Het frame is goed toegevoegd.";
+        } elseif (!is_uploaded_file($_FILES['afbeelding']['tmp_name']) && $imgLink!="" && empty($ytLink) && !empty($imgLink)) {
+            //: Er is geen img gepost.
+            $data = array(
+                'Title' => $_POST['title'],
+                'duration' => $_POST['duration'],
+                'media' => $imgLink,
+                'text' => $_POST['text']
+            );
+            $message = "Het frame is goed toegevoegd, met een directe link..";
+        } elseif (isset($ytLink) || $ytLink!="") {
+            $url = $ytLink;
+            preg_match(
+                '/[\\?\\&]v=([^\\?\\&]+)/',
+                $url,
+                $matches
+            );
+            $ids = $matches[1];
+
+            $width = '640';
+            $height = '385';
+            $fullframe =  '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $ids .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+
+            //: Er is geen img gepost.
+            $data = array(
+                'Title' => $_POST['title'],
+                'duration' => $_POST['duration'],
+                'media' => $fullframe,
+                'text' => $_POST['text']
+            );
+            $message = "Frame is succesvol aangemaakt, met YouTube.";
         } else {
-          echo "of hier";
             $afbeelding = $_FILES["afbeelding"];
             if(isSet($afbeelding) && $afbeelding["error"] === 0) {
                 // alles ging goed
@@ -45,7 +76,7 @@
                   imagePNG($gd, $doel);
 
                   // Return
-                  $message = "Frame is succesvol aangemaakt, met afbeelding <br/>";
+                  $message = "Frame is succesvol aangemaakt, met afbeelding.";
                   //$message .= "Bestand is geüpload als ".$bestand;
 
                   // afbeelding weer sluiten
@@ -73,8 +104,7 @@
         // Adding with the api
         $token = $_SESSION['key'];
         $r = Frame::frameCreate($data, $token);
-        echo $r;
-        //header( 'location: frames.php');
+        header( 'location: frames.php');
     } else {
         $message = "Er is geen POST. Neem contact op met uw site adminstrator";
         //Dump your POST variables

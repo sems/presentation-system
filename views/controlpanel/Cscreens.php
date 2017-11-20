@@ -24,7 +24,7 @@
             foreach ($search_results as $data) {
 
                 $id = $data["id"];
-                $userId = $data["userId"];
+                $userId = $data["companyId"];
                 $name = $data["name"];
                 $active = $data["active"];
                 if ($active == 1) {
