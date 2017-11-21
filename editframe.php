@@ -24,11 +24,9 @@
                 );
             }
 
-
             $editFrameCall = Frame::frameEdit($uEditData, $idToEdit, $key);
 
-
-            $_SESSION['msg'] = "frame aangepast";
+            $_SESSION['msg'] = "Het frame is aangepast.";
 
             //echo $message;
             header('location: frames.php');
