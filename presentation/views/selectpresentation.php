@@ -4,7 +4,7 @@
     session_start();
 
     $idToView = $_POST['selectedItem'];
-    echo $idToView."<br/>";
+    // echo $idToView."<br/>";
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //something posted
         $key = $_SESSION['key'];
@@ -17,20 +17,17 @@
             $getPresentation =  Presentation::getPresentation($idToView, $key);
             $getPresentation = json_decode($getPresentation);
 
-            function checkRemoteFile($url)
-            {
+            function checkRemoteFile($url) {
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL,$url);
                 // don't download content
                 curl_setopt($ch, CURLOPT_NOBODY, 1);
                 curl_setopt($ch, CURLOPT_FAILONERROR, 1);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                if(curl_exec($ch)!==FALSE)
-                {
+                if(curl_exec($ch)!==FALSE) {
                     return true;
                 }
-                else
-                {
+                else {
                     return false;
                 }
             }
@@ -40,7 +37,6 @@
 
                 return (substr($headers[0], 9, 3) !== "404");
             }
-
 
             $arr = array(
                 "frame1",
@@ -67,11 +63,15 @@
                 if ($result === NULL) {
                     break;
                 }
+
                 $title     = $result["title"];
                 $text      = $result['text'];
                 $duration  = $result["duration"]*1000;
                 $media     = $result["media"];
                 $med       = checkRemoteFile($media);
+
+                $localLink  = "http://presentatiesysteem-2017-2018.saldev.nl/img/uploads/".$media;
+                $checkLocal = checkRemoteFile($localLink);
                 ?>
                 <div class="slider__item" data-time="<?php echo $duration; ?>">
                     <?php
@@ -82,14 +82,14 @@
                     if ($med == true || $med == "1" || $med == 1) {
                         echo '<img src="'.$media.'"/>';
                     }
+                    if ($checkLocal == true || $checkLocal == "1" || $checkLocal == 1) {
+                        echo '<img src="'.$localLink.'"/>';
+                    }
                     if (yt_exists($media)) {
                         //  Yep, video is still up and running :)
                         echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
-                    } else {
-                        //  These aren't the droids you're looking for :(
                     }
                     ?>
-
                 </div>
                 <?php
             }
