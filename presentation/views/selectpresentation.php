@@ -17,6 +17,31 @@
             $getPresentation =  Presentation::getPresentation($idToView, $key);
             $getPresentation = json_decode($getPresentation);
 
+            function checkRemoteFile($url)
+            {
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL,$url);
+                // don't download content
+                curl_setopt($ch, CURLOPT_NOBODY, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                if(curl_exec($ch)!==FALSE)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            function yt_exists($videoID) {
+                $theURL = "http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=$videoID&format=json";
+                $headers = get_headers($theURL);
+
+                return (substr($headers[0], 9, 3) !== "404");
+            }
+
+
             $arr = array(
                 "frame1",
                 "frame2",
@@ -30,7 +55,7 @@
                 "frame10"
             );
             ?>
-                <div class="slider">
+            <div class="slider">
             <?php
             foreach ($arr as &$value) {
                 $n = $getPresentation->data->$value;
@@ -46,15 +71,25 @@
                 $text      = $result['text'];
                 $duration  = $result["duration"]*1000;
                 $media     = $result["media"];
-
+                $med       = checkRemoteFile($media);
                 ?>
                 <div class="slider__item" data-time="<?php echo $duration; ?>">
                     <?php
                     echo $title."<br/>";
                     echo $text."<br/>";
                     echo $media."<br/>";
+                    echo $med;
+                    if ($med == true || $med == "1" || $med == 1) {
+                        echo '<img src="'.$media.'"/>';
+                    }
+                    if (yt_exists($media)) {
+                        //  Yep, video is still up and running :)
+                        echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                    } else {
+                        //  These aren't the droids you're looking for :(
+                    }
                     ?>
-                    <img src="https://play.google.com/books/publish/static/images/google-search.png"/>
+
                 </div>
                 <?php
             }
