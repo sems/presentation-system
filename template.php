@@ -7,7 +7,6 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <!-- Custom CSS-->
         <link rel="stylesheet" href="css/main.min.css">
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
         <title><?php echo $sectionActive ?></title>
     </head>
     <body>
@@ -46,7 +45,6 @@
           crossorigin="anonymous"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
           <script src="js/parallax.min.js"></script>
-          <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
         <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>
