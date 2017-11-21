@@ -78,7 +78,6 @@
                     echo $title."<br/>";
                     echo $text."<br/>";
                     echo $media."<br/>";
-                    echo $med;
                     if ($med == true || $med == "1" || $med == 1) {
                         echo '<img src="'.$media.'"/>';
                     }
