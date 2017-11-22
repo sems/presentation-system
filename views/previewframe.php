@@ -70,13 +70,13 @@
                 ?>
                 <div class="container_preview">
                     <div class="content">
-                      <header>
-                        <div class="header-container">
-                          <h1 align="center" class="slide-head"><?php echo $title; ?> </h1>
-                          <hr>
-                          <p> <?php echo $text; ?> </p>
-                        </div>
-                      </header>
+                        <header>
+                            <div class="header-container">
+                                <h1 align="center" class="slide-head"><?php echo $title; ?> </h1>
+                                <hr>
+                                <p> <?php echo $text; ?> </p>
+                            </div>
+                        </header>
                     </div>
                 </div>
             </div>
