@@ -1,6 +1,8 @@
 <?php
     require_once 'menu.php';
     require_once "classes/frame.class.php";
+    session_start();
+    $key = $_SESSION['key'];
 ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
@@ -8,6 +10,7 @@
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
+            <th>Company id</th>
             <th>Titel</th>
             <th>Lengte</th>
             <th>Media</th>
@@ -17,21 +20,25 @@
             <th>Verwijderen</th>
         </tr>
         <?php
-            $r = Frame::getFrames();
+            $r = Frame::getFrames($key);
 
             $search_results = json_decode($r, true);
-            if ($search_results === NULL) die('Error parsing json');
+            if ($search_results === NULL) {
+            echo 'Geen resultaten';
+            }
             //print_r($search_results);
 
             foreach ($search_results as $data) {
 
                 $id = $data["id"];
+                $c_id = $_SESSION['companyId'];
                 $duration = $data["duration"];
                 $title = $data["title"];
                 $media = $data["media"];
                 $tekst = $data["text"];
                 echo "<tr>";
                     echo '<td>'.$id.'</td>';
+                    echo '<td>'.$c_id.'</td>';
                     echo '<td>'.$title.'</td>';
                     echo '<td>'.$duration.'</td>';
                     echo '<td>'.$media.'</td>';

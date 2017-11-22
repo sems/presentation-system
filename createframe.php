@@ -3,15 +3,16 @@
     require_once "classes/frame.class.php";
 
     session_start();
-
+    $c_id = $_SESSION['companyId'];
     if(isset($_POST['createframe'])) {
 
         $imgLink = $_POST["img_link"];
         $ytLink = $_POST["yt_link"];
 
-        if( !is_uploaded_file($_FILES['afbeelding']['tmp_name']) && empty($imgLink) && empty($ytLink) ) {
+        if(!is_uploaded_file($_FILES['afbeelding']['tmp_name']) && empty($imgLink) && empty($ytLink) ) {
             // NOTE: Er is helemaal geen media mee gepost
             $data = array(
+                'companyId' => $c_id,
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
                 'media' => NULL,
@@ -21,6 +22,7 @@
         } elseif (!is_uploaded_file($_FILES['afbeelding']['tmp_name']) && $imgLink!="" && empty($ytLink) && !empty($imgLink)) {
             //: Er is een frame toegevoegd met alleen een link
             $data = array(
+                'companyId' => $c_id,
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
                 'media' => $imgLink,
@@ -43,6 +45,7 @@
             $height = '385';
 
             $data = array(
+                'companyId' => $c_id,
                 'Title' => $_POST['title'],
                 'duration' => $_POST['duration'],
                 'media' => $ids,
@@ -77,8 +80,6 @@
                     // afbeelding opslaan
                     imagePNG($gd, $doel);
 
-                    // Return
-                    $message = "Frame is succesvol aangemaakt, met afbeelding.";
                     //$message .= "Bestand is geüpload als ".$bestand;
 
                     // afbeelding weer sluiten
@@ -88,6 +89,7 @@
                     unlink($file);
 
                     $data = array(
+                        'companyId' => $c_id,
                         'Title' => $_POST['title'],
                         'duration' => $_POST['duration'],
                         'media' => $bestand,
@@ -108,6 +110,8 @@
         // Adding with the api
         $token = $_SESSION['key'];
         $r = Frame::frameCreate($data, $token);
+        // Return
+        $message = "Frame is succesvol aangemaakt, met afbeelding.";
         header( 'location: frames.php');
     } else {
         $message = "Er is geen POST. Neem contact op met uw site adminstrator";

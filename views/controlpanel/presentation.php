@@ -93,10 +93,6 @@
         <input required name="name" type='text' id="title"/>
       </div>
       <div class='field'>
-        <label for="frame_">CompanyId<span class="required">*</span></label>
-        <input required name="company_id" type='text' />
-      </div>
-      <div class='field'>
         <label for="frame_1">Frame 1<span class="required">*</span></label>
         <select name="frame_1">
             <option disabled selected value="0">kies frame</option>
@@ -279,10 +275,6 @@
               <div class='field'>
                 <label for="title">Titel<span class="required">*</span></label>
                 <input required name="e_name" type='text' id="title"/>
-              </div>
-              <div class='field'>
-                <label for="frame_">CompanyId<span class="required">*</span></label>
-                <input required name="e_company_id" type='text' />
               </div>
               <div class='field'>
                 <label for="frame_1">Frame 1<span class="required">*</span></label>

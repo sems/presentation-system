@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = array(
         'id' => $idToEdit,
         'name' => $_POST['e_name'],
-        'companyId' => $_POST['e_company_id'],
+        'companyId' => $_SESSION['companyId'],
         'frame1' => $_POST['e_frame_1'],
         'frame2' => $_POST['e_frame_2'],
         'frame3' => $_POST['e_frame_3'],

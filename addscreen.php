@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $active = "False";
     }
     $data = array(
-        'UserId' => $_POST['add_screen_user_id'],
+        'companyId' => $_SESSION['companyId'],
         'Name' => $_POST['add_screen_name'],
         'Active' => $active,
     );

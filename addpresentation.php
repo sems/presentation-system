@@ -4,9 +4,10 @@ session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $key = $_SESSION['key'];
+    $c_id = $_SESSION['companyId'];
     $data = array(
         'name' => $_POST['name'],
-        'companyId' => $_POST['company_id'],
+        'companyId' => $c_id,
         'frame1' => $_POST['frame_1'],
         'frame2' => $_POST['frame_2'],
         'frame3' => $_POST['frame_3'],
@@ -18,7 +19,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'frame9' => $_POST['frame_9'],
         'frame10' => $_POST['frame_10']
     );
-
+    // checks if a $_POST is empty and puts int containing NULL
+    foreach ($data as $key => $value) {
+        $value = trim($value);
+        if (empty($value)) {
+            $data[$key] = 0;
+        }
+    }
     // If success with the ReCaptcha
     $aCreate = Presentation::createPresentation($data, $key);
 

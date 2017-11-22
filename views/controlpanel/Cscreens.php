@@ -55,11 +55,6 @@
     <header>Toevoegen</header>
     <div class='content'>
         <form action="addscreen.php" method="POST">
-
-            <div class='field'>
-				<label >Bedrijfs id<span class="required">*</span></label>
-				<input required name="add_screen_user_id" type='text' />
-			</div>
 			<div class='field'>
 				<label >Naam<span class="required">*</span></label>
 				<input required name="add_screen_name" type='text' />
