@@ -34,7 +34,6 @@
       return (substr($headers[0], 9, 3) !== "404");
   }
 
-  print_r($search_results);
 
 
   $title     = $search_results["title"];
@@ -47,26 +46,40 @@
   $checkLocal = checkRemoteFile($localLink);
 
 ?>
-<?php
-if ($med == true || $med == "1" || $med == 1) {
-    echo '<img id="bg" class="bgwidth" src="'.$media.'"/>';
-}
-if ($checkLocal == true || $checkLocal == "1" || $checkLocal == 1) {
-    echo '<img id="bg" class="bgwidth" src="'.$localLink.'"/>';
-}
-if (yt_exists($media)) {
-    //  Yep, video is still up and running :)
-    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
-}
-?>
-<div class="container_preview">
-  <div class="content">
-    <header>
-      <div class="header-container">
-        <h1 align="center" class="slide-head"><?php echo $title; ?> </h1>
-        <hr>
-        <p> <?php echo $text; ?> </p>
-      </div>
-    </header>
-  </div>
+<div class="lightbox">
+    <div class="lb-images">
+        <div class="slider">
+            <div class="slider__item lb-slides" data-time="<?php echo $duration; ?>">
+                <?php
+                if ($med == true || $med == "1" || $med == 1) {
+                    echo "<div class='img-fill'>";
+                        echo '<img src="'.$media.'"/>';
+                    echo "</div>";
+                }
+                if ($checkLocal == true || $checkLocal == "1" || $checkLocal == 1) {
+                    echo "<div class='img-fill'>";
+                        echo '<img src="'.$localLink.'"/>';
+                    echo "</div>";
+                }
+                if (yt_exists($media)) {
+                    //  Yep, video is still up and running :)
+                    echo "<div class='img-fill'>";
+                        echo '<iframe class="yt_vid" width="" height="" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                    echo "</div>";
+                }
+                ?>
+                <div class="container_preview">
+                    <div class="content">
+                      <header>
+                        <div class="header-container">
+                          <h1 align="center" class="slide-head"><?php echo $title; ?> </h1>
+                          <hr>
+                          <p> <?php echo $text; ?> </p>
+                        </div>
+                      </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
