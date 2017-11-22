@@ -21,7 +21,6 @@
         </tr>
         <?php
             $r = Frame::getFrames($key);
-
             $search_results = json_decode($r, true);
             if ($search_results === NULL) {
             echo 'Geen resultaten';
@@ -31,7 +30,7 @@
             foreach ($search_results as $data) {
 
                 $id = $data["id"];
-                $c_id = $_SESSION['companyId'];
+                $c_id = $data['companyId'];
                 $duration = $data["duration"];
                 $title = $data["title"];
                 $media = $data["media"];

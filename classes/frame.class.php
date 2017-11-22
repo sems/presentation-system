@@ -6,8 +6,8 @@ require_once "classes/general.class.php";
 class Frame extends General
 {
 
-    public function getFrames() {
-        $response = General::getApi("/api/Frame", 0);
+    public function getFrames($key) {
+        $response = General::getApi("/api/Frame", 1, $key);
         //$frameresponse;
         return $response;
     }
