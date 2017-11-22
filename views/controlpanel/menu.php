@@ -4,5 +4,5 @@
   <a href="controlusers.php">Gebruikers</a>
   <a href="controlscreens.php">Schermen</a>
   <a href="presentation.php">Presentaties</a>
-  <a href="presentation/select.php">Naar presenaties</a>
+  <a href="presentation/">Naar presenaties</a>
 </div>

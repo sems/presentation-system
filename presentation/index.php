@@ -1,7 +1,7 @@
 <?php
     require_once "inc/package.inc.php";
 
-    $view = "views/select.php";
+    $view = "views/index.php";
 
     include_once $template;
 ?>
