@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/presentatiesysteem/classes/general.class.php";
+require_once realpath(dirname(__FILE__)."/../../")."/classes/general.class.php";
 /**
  *
  */
