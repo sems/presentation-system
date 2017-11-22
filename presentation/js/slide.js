@@ -25,3 +25,5 @@ var changeSlide = function(timing) {
   }, timing);
 }
 changeSlide(0);
+
+//$(".content").width( $(window).width() );

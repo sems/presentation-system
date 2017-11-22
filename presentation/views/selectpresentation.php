@@ -51,48 +51,67 @@
                 "frame10"
             );
             ?>
-            <div class="slider">
-            <?php
-            foreach ($arr as &$value) {
-                $n = $getPresentation->data->$value;
-                //echo $n;
-                $r = Frame::frameGet($n, $key);
-
-                $result = json_decode($r, true);
-                //print_r($result);
-                if ($result === NULL) {
-                    break;
-                }
-
-                $title     = $result["title"];
-                $text      = $result['text'];
-                $duration  = $result["duration"]*1000;
-                $media     = $result["media"];
-                $med       = checkRemoteFile($media);
-
-                $localLink  = "http://presentatiesysteem-2017-2018.saldev.nl/img/uploads/".$media;
-                $checkLocal = checkRemoteFile($localLink);
-                ?>
-                <div class="slider__item" data-time="<?php echo $duration; ?>">
+            <div class="lightbox">
+                <div class="lb-images">
+                    <div class="slider">
                     <?php
-                    echo $title."<br/>";
-                    echo $text."<br/>";
-                    echo $media."<br/>";
-                    if ($med == true || $med == "1" || $med == 1) {
-                        echo '<img src="'.$media.'"/>';
-                    }
-                    if ($checkLocal == true || $checkLocal == "1" || $checkLocal == 1) {
-                        echo '<img src="'.$localLink.'"/>';
-                    }
-                    if (yt_exists($media)) {
-                        //  Yep, video is still up and running :)
-                        echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                    foreach ($arr as &$value) {
+                        $n = $getPresentation->data->$value;
+                        //echo $n;
+                        $r = Frame::frameGet($n, $key);
+
+                        $result = json_decode($r, true);
+                        //print_r($result);
+                        if ($result === NULL) {
+                            break;
+                        }
+
+                        $title     = $result["title"];
+                        $text      = $result['text'];
+                        $duration  = $result["duration"]*1000;
+                        $media     = $result["media"];
+                        $med       = checkRemoteFile($media);
+
+                        $localLink  = "http://presentatiesysteem-2017-2018.saldev.nl/img/uploads/".$media;
+                        $checkLocal = checkRemoteFile($localLink);
+                        ?>
+                        <div class="slider__item lb-slides" data-time="<?php echo $duration; ?>">
+                            <?php
+                            if ($med == true || $med == "1" || $med == 1) {
+                                echo "<div class='img-fill'>";
+                                    echo '<img src="'.$media.'"/>';
+                                echo "</div>";
+                            }
+                            if ($checkLocal == true || $checkLocal == "1" || $checkLocal == 1) {
+                                echo "<div class='img-fill'>";
+                                    echo '<img src="'.$localLink.'"/>';
+                                echo "</div>";
+                            }
+                            if (yt_exists($media)) {
+                                //  Yep, video is still up and running :)
+                                echo "<div class='img-fill'>";
+                                    echo '<iframe class="yt_vid" width="" height="" src="https://www.youtube.com/embed/'. $media .'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+                                echo "</div>";
+                            }
+                            ?>
+                            <div class="container_preview">
+                                <div class="content">
+                                  <header>
+                                    <div class="header-container">
+                                      <h1 align="center" class="slide-head"><?php echo $title; ?> </h1>
+                                      <hr>
+                                      <p> <?php echo $text; ?> </p>
+                                    </div>
+                                  </header>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php
                     }
                     ?>
+                    </div>
                 </div>
-                <?php
-            }
-            ?>
             </div>
             <?php
         }

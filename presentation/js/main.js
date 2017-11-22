@@ -96,3 +96,29 @@ function focusItems() {
 	}).find('li').first().focus();
 
 }
+
+
+$(window).load(function() {
+
+	var theWindow        = $(window),
+	    $bg              = $("#bg"),
+	    aspectRatio      = $bg.width() / $bg.height();
+
+	function resizeBg() {
+
+		if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgheight');
+		} else {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgwidth');
+		}
+	}
+	theWindow.resize(resizeBg).trigger("resize");
+	$(".yt_vid").attr({
+		"width" : theWindow.width()*0.75,
+		"height" : theWindow.height()*0.75,
+	});
+});

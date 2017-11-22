@@ -7,6 +7,7 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <!-- Custom CSS-->
         <link rel="stylesheet" href="css/main.min.css">
+        <link rel="stylesheet" href="css/slide.min.css">
         <!-- Add the slick-theme.css if you want default styling -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
 

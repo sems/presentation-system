@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+.lightbox {
+    width: 100vw;
+    height:100vh;
+    background-color: #fff;
+    .lb-images {
+        max-width: 100%;
+        max-height: 100%;
+        .lb-slides {
+            max-width: 100%;
+            max-height: 100%;
+            .img-fill {
+                width: 100vw;
+                height: 100vh;
+                display:block;
+                img, iframe {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin: 0 auto;
+
+                    &:focus {
+                      outline: 0;
+                    }
+                }
+                img {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+.slider__item {
+    position: relative;
+    .container_preview {
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            header {
+                text-align: center;
+                //color: #000;
+                height: 27.5em;
+                .header-container {
+                    h1 {
+                        font-size: 3.125em;
+                        line-height: 1.25em;
+                        text-transform: uppercase;
+                        margin: 0.125em 0 0.625em;
+                    }
+                    .slide-head {
+                        text-align: center;
+                        font-size: 22px;
+                        margin: 30px 3%;
+                    }
+                    hr {
+                        width: 75%;
+                        margin: 0 auto;
+                    }
+                    p {
+                        margin-top: 8px;
+                        margin: 0 auto;
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
