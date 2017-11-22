@@ -17,6 +17,6 @@
       <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
       <script src="presentation/js/main.js" type="text/javascript"></script>
-      <script src="js/slide.js" type="text/javascript"></script>
+      <script src="presentation/js/slide.js" type="text/javascript"></script>
     </body>
 </html>
