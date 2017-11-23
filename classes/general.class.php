@@ -165,7 +165,7 @@
             return $response;
         }
 
-        public function getApi($job, $secure, $token = "false") {
+        public function getApi($job, $secure, $token) {
             /*
             *  Only change this varible if the servers ip adress changes.
             *  The $job is added to the baseUrl to get the route to
