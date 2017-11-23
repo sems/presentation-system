@@ -30,7 +30,9 @@
             $r = Presentation::getPresentations($key);
 
             $search_results = json_decode($r, true);
-            if ($search_results === NULL) die('Error parsing json');
+            if ($search_results === NULL) {
+            echo 'Geen resultaten';
+            }
             //print_r($search_results);
 
             foreach ($search_results as $data) {
@@ -62,7 +64,6 @@
                     echo '<td>'.$frame8.'</td>';
                     echo '<td>'.$frame9.'</td>';
                     echo '<td>'.$frame10.'</td>';
-
                     echo "<td>";
                         echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
                     echo "</td>";
@@ -98,9 +99,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -113,9 +114,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -128,9 +129,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -143,9 +144,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -158,9 +159,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -173,9 +174,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -188,9 +189,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -203,9 +204,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -218,9 +219,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -233,9 +234,9 @@
             <option disabled selected value="0">kies frame</option>
             <option value="0">geen frame</option>
             <?php
-            $response = Frame::getFrames();
+            $response = Frame::getFrames($key);
             $r = json_decode($response, true);
-            if ($r === NULL) die('Error parsing json');
+            if ($r === NULL) { echo "geen resultaten"; }
             foreach($r as $value) {
             ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
             }
@@ -282,9 +283,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -297,9 +298,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -312,9 +313,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -327,9 +328,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -342,9 +343,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -357,9 +358,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -372,9 +373,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -387,9 +388,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -402,9 +403,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
@@ -417,9 +418,9 @@
                     <option disabled selected value="0">kies frame</option>
                     <option value="0">geen frame</option>
                     <?php
-                    $response = Frame::getFrames();
+                    $response = Frame::getFrames($key);
                     $r = json_decode($response, true);
-                    if ($r === NULL) die('Error parsing json');
+                    if ($r === NULL) { echo "geen resultaten"; }
                     foreach($r as $value) {
                     ?> <option value=<?php echo $value['id']; ?>><?php echo $value['title']; ?></option> <?php
                     }
