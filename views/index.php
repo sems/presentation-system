@@ -5,6 +5,7 @@
         //Access your POST variables
         $key = $_SESSION['key'];
         echo $key."<br/>";
+        echo $_SESSION['companyId'];
     }
     ?>
 </div>

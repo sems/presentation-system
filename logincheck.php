@@ -34,8 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $l_response = Account::accountLogin($l_data);
         $l_response = json_decode($l_response);
         $token = $l_response->data[0]->token;
-        $c_id = $l_response->data[1];
-        echo $c_id;
+        $c_id = $l_response->data[1]->id;
         //$userid = $l_response->data->id;
         if($l_response->error == false) {
             $_SESSION['key'] = "Bearer " .$token;
@@ -53,6 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $message = $l_response->message;
             $_SESSION['msg'] = $message;
             header('Location: login.php');
+
         }
     }
 }
