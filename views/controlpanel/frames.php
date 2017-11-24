@@ -85,7 +85,7 @@
         <textarea required name="text" rows="8" cols="80"></textarea>
       </div>
       <div class='field'>
-        <input type='submit' name="createframe" class='btn-primary' value="Aanmaken" />
+        <input type='submit' name="createframe" class='btn-add btn' value="Aanmaken" />
       </div>
     </form>
   </div>
