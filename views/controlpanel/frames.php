@@ -1,7 +1,6 @@
 <?php
     require_once 'menu.php';
     require_once "classes/frame.class.php";
-    session_start();
     $key = $_SESSION['key'];
 ?>
 <div class="c_container">
