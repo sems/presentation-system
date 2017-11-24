@@ -1,5 +1,6 @@
 <?php
 require_once 'menu.php';
+require_once "classes/account.class.php";
 require_once "classes/play.class.php";
  ?>
 <div class="c_container">
