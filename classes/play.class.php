@@ -35,7 +35,7 @@ class Play extends General
         $getPlay = General::getApi("/api/Play/".$dataID, 1, $key);
         return $getPlay;
     }
-    public function getPlay($key) {
+    public function getPlays($key) {
         $response = General::getApi("/api/Play", 1, $key);
         return $response;
     }
