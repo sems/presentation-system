@@ -1,6 +1,6 @@
 <?php
 require_once 'menu.php';
-require_once "classes/account.class.php";
+require_once "classes/play.class.php";
  ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
@@ -30,10 +30,10 @@ require_once "classes/account.class.php";
               exit();
             } else {
               foreach ($results as $data) {
-                  $id = $data["Id"];
-                  $receiverid = $data["ReceiverId"];
-                  $companyid = $data["CompanyId"];
-                  $presentationid = $data["PresentationId"];
+                  $id = $data["id"];
+                  $receiverid = $data["receiverId"];
+                  $companyid = $data["companyId"];
+                  $presentationid = $data["presentationId"];
                   echo "<tr>";
                       echo '<td>'.$id.'</td>';
                       echo '<td>'.$receiverid.'</td>';
@@ -75,21 +75,18 @@ require_once "classes/account.class.php";
 
             <input class="in-awnser" name="idtoedit" type="hidden" value="">
             <div class='field'>
-				<label for="username">Gebruikers naam<span class="required">*</span></label>
-				<input required name="b_edit_name" type='text' id="username" />
+				<label for="companyId">Bedrijfs Id<span class="required">*</span></label>
+				<input required name="b_edit_companyId" type='text' id="username" />
 			</div>
 			<div class='field'>
-				<label for="email">Email Address<span class="required">*</span></label>
-				<input required name="b_edit_email" type='email' />
+				<label for="ReceiverId">Email Address<span class="required">*</span></label>
+				<input required name="b_edit_receiverId" type='email' />
 			</div>
 			<div class='field'>
 				<label for="password">Wachtwoord<span class="required">*</span></label>
-				<input required name="b_edit_password" type='password' />
+				<input required name="b_edit_presentationId" type='password' />
 			</div>
-			<div class='field'>
-				<label for="password">Herhaal wachtwoord<span class="required">*</span></label>
-				<input required name="b_edit_repeat_password" type='password' />
-			</div>
+			
             <div class='field'>
 				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Bijwerken" />
 			</div>

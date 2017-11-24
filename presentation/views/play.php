@@ -1,6 +1,5 @@
 <?php
-    require_once "classes/presentation.class.php";
-    include_once "classes/play.class.php";
+    require_once "classes/play.class.php";
 		session_start();
 ?>
 <div class="container">
@@ -20,14 +19,14 @@
           <option disabled value="sel">Select</option>
           <?php
         		$key = $_SESSION['key'];
-        		$r = Presentation::getPresentations($key);
+        		$r = Play::getPlays($key);
 
         		$search_results = json_decode($r, true);
         		if ($search_results === NULL) die('Error parsing json');
         		//print_r($search_results);
 
         		foreach ($search_results as $data) {
-        			$name = $data["name"];
+        			$name = $data["presentationId"];
         			$id = $data["id"];
         			echo '<option value="'.$id.'">'.$name.'</option>'."\n";
         		}
