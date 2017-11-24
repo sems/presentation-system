@@ -14,7 +14,7 @@ require_once "classes/account.class.php";
         </tr>
         <?php
             $key = $_SESSION['key'];
-            $r = Play::getPlay($key);
+            $r = Play::getPlays($key);
 
             $search_results = json_decode($r, true);
             if ($search_results === NULL){
