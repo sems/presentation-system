@@ -1,20 +1,45 @@
 <?php
-    require_once "classes/presentation.class.php";
+    require_once "classes/play.class.php";
+    require_once "classes/receiver.class.php";
     require_once "classes/frame.class.php";
     session_start();
 
-    $idToView = $_POST['selectedItem'];
+$key = $_SESSION['key'];
+?>
+
+<?php
+if(!isset($_POST['selectedItem'])) {
+    ?>
+<form method="post" action="#">
+
+    <select name="selectedItems">
+    <?php
+    $receivers = Receiver::getReceivers($key);
+        foreach($receivers as $r){
+            ?>
+        <option value="<?php echo $r["id"]; ?>"><?php echo $r["name"]; ?></option>
+    <?php
+        }
+    ?>
+</select>
+    <button name="send" class="selected">Ok</button>
+    </form>
+<?php
+}
+    
     // echo $idToView."<br/>";
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    else {
+        if(isset($_POST["send"])){
+            
         //something posted
-        $key = $_SESSION['key'];
+        
         if ($idToView == "sel" || $idToView == "NaN" || $idToView == "") {
             $message = "Maak aub een geldige keuze";
             //echo $message;
             $_SESSION['msg'] = $message;
-            header('location: select.php');
+            //header('location: select.php');
         } else {
-            $getPresentation =  Presentation::getPresentation($idToView, $key);
+            $getPresentation =  Play::getPlay($idToView, $key);
             $getPresentation = json_decode($getPresentation);
 
             function checkRemoteFile($url) {
@@ -55,8 +80,8 @@
                 <div class="lb-images">
                     <div class="slider">
                     <?php
-                    foreach ($arr as &$value) {
-                        $n = $getPresentation->data->$value;
+                    foreach ($arr as $value) {
+                        $n = $getPresentation;
                         //echo $n;
                         $r = Frame::frameGet($n, $key);
 
@@ -115,5 +140,6 @@
             </div>
             <?php
         }
+    }
     }
 ?>
