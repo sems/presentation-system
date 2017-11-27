@@ -4,7 +4,7 @@ require_once "classes/account.class.php";
  ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
-    <button type="button" class="btn-add btn" name="button">Frame aanmaken</button>
+    <button type="button" class="btn-add btn" name="button">Gebruiker aanmaken</button>
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
@@ -46,7 +46,36 @@ require_once "classes/account.class.php";
             }
         ?>
     </table>
+    <button type="button" class="btn-add btn" name="button">Gebruiker aanmaken</button>
 </div>
+
+<div class="add-modal">
+  <header>Aanmaken</header>
+  <div class="content">
+    <form action="createemployee.php" method="post" enctype="multipart/form-data">
+      <div class='field'>
+          <label for="username">Gebruikers naam<span class="required">*</span></label>
+          <input required name="b_name" type='text' id="username" />
+      </div>
+      <div class='field'>
+          <label for="email">Email Address<span class="required">*</span></label>
+          <input required name="b_email" type='email' />
+      </div>
+      <div class='field'>
+          <label for="password">Wachtwoord<span class="required">*</span></label>
+          <input required name="b_password" type='password' />
+      </div>
+      <div class='field'>
+          <label for="password">Herhaal wachtwoord<span class="required">*</span></label>
+          <input required name="b_repeat_password" type='password' />
+      </div>
+      <div class='field'>
+        <input type='submit' name="createframe" class='btn-add btn' value="Aanmaken" />
+      </div>
+    </form>
+  </div>
+</div>
+
 <div class='del-modal'>
     <header>Verwijderen</header>
     <div class='content'>

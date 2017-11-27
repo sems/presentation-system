@@ -19,6 +19,20 @@ class Account extends General
         $registerResponse = General::postApi($data, "/api/account/create", 0);
         return $registerResponse;
     }
+
+    public function employeeCreate($data, $key) {
+        // NOTE: Op deze manier moet de data mee gegeven worden aan een post van de api
+        // Graag ook op deze manier schrijven, inclusief the inditatiesl
+        /*
+            $data = array(
+                'Name' => $_POST['b_name'],
+                'Email' => $_POST['b_email'],
+                'Password' => $_POST['b_password']
+            );
+        */
+        $employeeRegisterResponse = General::postApi($data, "/api/account/create", 1, $key);
+        return $employeeRegisterResponse;
+    }
     public function accountLogin($data) {
         /*
             $data = array(
