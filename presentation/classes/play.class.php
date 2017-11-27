@@ -1,5 +1,5 @@
 <?php
-require_once "classes/general.class.php";
+require_once realpath(dirname(__FILE__)."/../../")."/classes/general.class.php";
 /**
  *
  */

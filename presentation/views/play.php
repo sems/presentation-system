@@ -4,7 +4,7 @@
     require_once "classes/frame.class.php";
     session_start();
 
-$key = $_SESSION['key'];
+    $key = $_SESSION['key'];
 ?>
 
 <?php
@@ -26,13 +26,13 @@ if(!isset($_POST['selectedItem'])) {
     </form>
 <?php
 }
-    
+
     // echo $idToView."<br/>";
     else {
         if(isset($_POST["send"])){
-            
+
         //something posted
-        
+
         if ($idToView == "sel" || $idToView == "NaN" || $idToView == "") {
             $message = "Maak aub een geldige keuze";
             //echo $message;

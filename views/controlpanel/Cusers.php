@@ -4,6 +4,7 @@ require_once "classes/account.class.php";
  ?>
 <div class="c_container">
     <?php include 'inc/error.php'; ?>
+    <button type="button" class="btn-add btn" name="button">Frame aanmaken</button>
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
