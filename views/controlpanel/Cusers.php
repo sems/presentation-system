@@ -70,7 +70,7 @@ require_once "classes/account.class.php";
           <input required name="b_repeat_password" type='password' />
       </div>
       <div class='field'>
-        <input type='submit' name="createframe" class='btn-add btn' value="Aanmaken" />
+        <input type='submit' name="createframe" class='btn btn-primary' value="Aanmaken" />
       </div>
     </form>
   </div>
