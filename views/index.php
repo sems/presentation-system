@@ -11,8 +11,10 @@
     if(isSet($_SESSION['key'])){
         //Access your POST variables
         $key = $_SESSION['key'];
-        echo $key."<br/>";
-        echo $_SESSION['companyId'];
+
+        $com_id = "CompanyID = ".$_SESSION['companyId'];
+        debug_to_console( $key );
+        debug_to_console( $com_id );
     }
     ?>
 </div>
