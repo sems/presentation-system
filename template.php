@@ -12,7 +12,7 @@
     <body>
         <nav>
             <ul>
-                <li class="brand brand-Desktop"><h1>Knoop</h1></li>
+                <li class="brand brand-Desktop"><h1>Daxis</h1></li>
                 <li class="nav-items <?php if($sectionActive == "Home") { echo "active";} ?> "><a href="/">Home</a></li>
                 <li class="nav-items <?php if($sectionActive == "About") { echo "active";} ?> "><a href="about.php">Over ons</a></li>
                 <li class="nav-items <?php if($sectionActive == "Prices") { echo "active";} ?> "><a href="prices.php">Prijzen</a></li>
