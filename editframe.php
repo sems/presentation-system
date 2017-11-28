@@ -9,7 +9,7 @@
             $idToEdit = $_POST['idtoedit'];
             $key = $_SESSION['key'];
             $c_id = $_SESSION['companyId'];
-            print_r($c_id);
+            //print_r($c_id);
             if(empty($_POST["edit_slide_media"])) {
                 $uEditData = array(
                     'Id' => $idToEdit,
@@ -33,8 +33,8 @@
 
             $_SESSION['msg'] = "Het frame is aangepast.";
 
-            print_r($editFrameCall);
-            //header('location: frames.php');
+            //print_r($editFrameCall);
+            header('location: frames.php');
 
         } else {
             $_SESSION['msg'] = "er is geen POST";
