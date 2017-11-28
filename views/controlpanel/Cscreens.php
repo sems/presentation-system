@@ -10,7 +10,7 @@
             <th>Id</th>
             <th>Bedrijfs id</th>
             <th>Naam</th>
-            <th>Actief</th>
+            <!-- <th>Actief</th> -->
             <th>Bewerken</th>
             <th>Verwijderen</th>
         </tr>
@@ -36,7 +36,7 @@
                     echo '<td>'.$id.'</td>';
                     echo '<td>'.$userId.'</td>';
                     echo '<td>'.$name.'</td>';
-                    echo '<td>'.$active.'</td>';
+                    //echo '<td>'.$active.'</td>';
                     echo "<td>";
                         echo '<button class="btn btn-edit" type="submit" name="edit" value="'.$id.'" >Bewerken</button>';
                     echo "</td>";
@@ -107,8 +107,8 @@
 				<label for="planselect">Actief?<span class="required">*</span></label>
 				<select name="edit_screen_active" required id="planselect">
 					<option val="" disabled>Kies hier</option>
-					<option val="true">Ja</option>
-					<option val="false">Nee</option>
+					<option val="1">true</option>
+					<option val="0">false</option>
 				</select>
 			</div>
             <div class='field'>
