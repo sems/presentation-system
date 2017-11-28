@@ -1,16 +1,18 @@
 <?php
     require_once "classes/presentation.class.php";
-		session_start();
+	session_start();
+    //$idToView = $_POST['selectedItem'];
+    //echo $idToView;
 ?>
 <div class="container">
-  <?php
-  if(isSet($_SESSION['msg'])){
-      //Access your POST variables
-      $temp = $_SESSION['msg'];
-      echo $temp."<br/>";
-      //Unset the useless session variable
-      unset($_SESSION['msg']);
-  }?>
+    <?php
+    if(isSet($_SESSION['msg'])){
+        //Access your POST variables
+        $temp = $_SESSION['msg'];
+        echo $temp."<br/>";
+        //Unset the useless session variable
+        unset($_SESSION['msg']);
+    }?>
 	<div class="selected-item">
 		<p>Select Presentation </p>
 	</div>
