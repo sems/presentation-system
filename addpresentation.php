@@ -3,7 +3,7 @@ require_once "classes/presentation.class.php";
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $key = $_SESSION['key'];
+    $token = $_SESSION['key'];
     $c_id = $_SESSION['companyId'];
     $data = array(
         'name' => $_POST['name'],
@@ -19,15 +19,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'frame9' => $_POST['frame_9'],
         'frame10' => $_POST['frame_10']
     );
+
+
     // checks if a $_POST is empty and puts int containing NULL
     foreach ($data as $key => $value) {
         $value = trim($value);
         if (empty($value)) {
             $data[$key] = 0;
+        } else {
+
         }
     }
     // If success with the ReCaptcha
-    $aCreate = Presentation::createPresentation($data, $key);
+    $aCreate = Presentation::createPresentation($data, $token);
 
     $message = "De presentatie is aangemaakt";
     //Dump your POST variables

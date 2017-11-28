@@ -3,7 +3,7 @@ require_once "classes/presentation.class.php";
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $key = $_SESSION['key'];
+    $token = $_SESSION['key'];
 	$idToEdit = $_POST['idtoedit'];
     $data = array(
         'id' => $idToEdit,
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     var_dump($data);
     // If success with the ReCaptcha
-    $aEdit = Presentation::editPresentation($data,$idToEdit,$key);
+    $aEdit = Presentation::editPresentation($data,$idToEdit,$token);
 	$aEdit = json_decode($aEdit);
     $message = "De presentatie is aangepast";
     //Dump your POST variables
