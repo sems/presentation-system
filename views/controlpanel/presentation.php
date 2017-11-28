@@ -9,7 +9,7 @@
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
-            <th>Bedr. ID</th>
+            <th>Bedrijfs id</th>
             <th>Naam</th>
             <th>Frame 1</th>
             <th>Frame 2</th>

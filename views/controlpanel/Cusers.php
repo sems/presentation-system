@@ -8,6 +8,7 @@ require_once "classes/account.class.php";
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
+            <th>Bedrijfs id</th>
             <th>Naam</th>
             <th>Email</th>
             <th>Bewerken</th>
@@ -29,10 +30,12 @@ require_once "classes/account.class.php";
             } else {
               foreach ($results as $data) {
                   $id = $data["id"];
+                  $c_id = $_SESSION['companyId'];
                   $name = $data["name"];
                   $email = $data["email"];
                   echo "<tr>";
                       echo '<td>'.$id.'</td>';
+                      echo '<td>'.$c_id.'</th>';
                       echo '<td>'.$name.'</td>';
                       echo '<td>'.$email.'</td>';
                       echo "<td>";

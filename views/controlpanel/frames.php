@@ -9,7 +9,7 @@
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
-            <th>Company id</th>
+            <th>Bedrijfs id</th>
             <th>Titel</th>
             <th>Lengte</th>
             <th>Media</th>
