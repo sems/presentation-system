@@ -2,12 +2,12 @@
     require_once "classes/receiver.class.php";
     session_start();
 
-    $idToEdit = $_POST['idtoedit'];
+
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $token = $_SESSION['key'];
         $c_id = $_SESSION['companyId'];
-        $activeEdit = $_POST['edit_screen_active'];
+        $idToEdit = $_POST['idtoedit'];
 
         $rName = $_POST['edit_screen_name'];
 
