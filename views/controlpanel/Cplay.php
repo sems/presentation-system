@@ -8,7 +8,7 @@ require_once "classes/play.class.php";
     <table class="user-table" method="get">
         <tr>
             <th>Id</th>
-            <th>CompanyId</th>
+            <th>Bedrijfs id</th>
             <th>ReceiverId</th>
             <th>PresentationId</th>
             <th>Verwijderen</th>
@@ -21,7 +21,7 @@ require_once "classes/play.class.php";
             if ($search_results === NULL){
                 echo 'Error parsing json';
                 die();
-            } 
+            }
             $results = $search_results;
 
             if (empty($results) ) {
@@ -87,7 +87,7 @@ require_once "classes/play.class.php";
 				<label for="password">Wachtwoord<span class="required">*</span></label>
 				<input required name="b_edit_presentationId" type='password' />
 			</div>
-			
+
             <div class='field'>
 				<input name="b_edit_submit" type='submit' class='btn btn-edit' value="Bijwerken" />
 			</div>
