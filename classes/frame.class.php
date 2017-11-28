@@ -38,7 +38,8 @@ class Frame extends General
     {
         /*
         $data = array(
-            'id' => '2',
+            'Id' => 2,
+            'CompanyId' => 26,
             'Title'=>'wow',
             'duration'=>'32',
             'media'=>'www.evv',
