@@ -5,7 +5,7 @@ require_once realpath(dirname(__FILE__)."/../../")."/classes/general.class.php";
  */
 class Play extends General
 {
-    public function createPlay($data,$key) {
+    public function createPlay($data, $key) {
         $response = General::postApi($data, "/api/Play/Create", 1, $key);
         return $response;
     }
