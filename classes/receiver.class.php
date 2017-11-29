@@ -18,7 +18,7 @@ class Receiver extends General
             'Active'=>'true'
         );
         */
-        $response = General::putApi($data, "/api/Receiver".$dataID, 1, $key);
+        $response = General::putApi($data, "/api/Receiver/".$dataID, 1, $key);
         return $response;
     }
 
