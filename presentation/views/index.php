@@ -5,14 +5,7 @@
     //echo $idToView;
 ?>
 <div class="container">
-    <?php
-    if(isSet($_SESSION['msg'])){
-        //Access your POST variables
-        $temp = $_SESSION['msg'];
-        echo $temp."<br/>";
-        //Unset the useless session variable
-        unset($_SESSION['msg']);
-    }?>
+    <?php print(getAlert()); ?>
 	<div class="selected-item">
 		<p>Select Presentation </p>
 	</div>

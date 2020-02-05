@@ -9,9 +9,7 @@
         //something posted
         $key = $_SESSION['key'];
         if ($idToView == "sel" || $idToView == "NaN" || $idToView == "") {
-            $message = "Maak aub een geldige keuze";
-            //echo $message;
-            $_SESSION['msg'] = $message;
+            setAlert("Maak een geldige keuze a.u.b.", "primary");
             header('location: select.php');
         } else {
             $getPresentation =  Presentation::getPresentation($idToView, $key);

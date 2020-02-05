@@ -3,14 +3,7 @@
 </head>
 <div class="login-page">
   <div class="form">
-	  <?php
-	  if(isSet($_SESSION['msg'])){
-		  //Access your POST variables
-		  $temp = $_SESSION['msg'];
-		  echo $temp."<br/>";
-		  //Unset the useless session variable
-		  unset($_SESSION['msg']);
-	  }?>
+	<?php print(getAlert()); ?>
 	<form class="login-form" action="logincheck.php" method="POST">
 	  <input type="text" name="l_email" placeholder="email"/>
 	  <input type="password" name="l_password" placeholder="password"/>

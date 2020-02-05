@@ -1,13 +1,6 @@
 <div class="parallax-window" data-parallax="scroll" data-image-src="img/tof.jpg"></div>
 <h1 class="m_title">Pakketten</h1>
-<?php
-if(isSet($_SESSION['msg'])){
-		//Access your POST variables
-		$temp = $_SESSION['msg'];
-		echo $temp."<br/>";
-		//Unset the useless session variable
-		unset($_SESSION['msg']);
-}?>
+<?php print(getAlert()); ?>
 <section id="pricePlans">
 	<ul id="plans">
         <?php
